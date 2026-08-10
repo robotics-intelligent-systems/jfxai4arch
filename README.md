@@ -1,4 +1,4 @@
-# Open-Source AI Platform Architecture
+# AI-Powered Cloud Platform
 
 ## Overview
 
