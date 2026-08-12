@@ -1,4 +1,4 @@
-# AI-Powered Cloud Platform
+# Agent-Powered Cloud Platform
 
 ## Overview
 
