@@ -1,0 +1,98 @@
+<mxfile host="app.diagrams.net" modified="2026-09-03T19:25:00.000Z" agent="ChatGPT" version="29.0.0">
+  <diagram id="mvp-spec" name="MVP Specification">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="MVP — PROFESSIONAL SYSTEM SPECIFICATION" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=26;fontStyle=1;fontColor=#1F2937;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="900" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Architecture • Requirements • Interfaces • Data • Security • Deployment" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#6B7280;" vertex="1" parent="1">
+          <mxGeometry x="52" y="75" width="900" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Scope -->
+        <mxCell id="scope" value="MVP SCOPE &amp; OBJECTIVES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F1FB;strokeColor=#5B9BD5;fontStyle=1;fontSize=16;fontColor=#17365D;" vertex="1" parent="1">
+          <mxGeometry x="50" y="130" width="450" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="scopeText" value="• Business objective&lt;br&gt;• Primary users / actors&lt;br&gt;• MVP success metrics&lt;br&gt;• In-scope / out-of-scope capabilities" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FBFF;strokeColor=#B4C7E7;align=left;verticalAlign=top;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="50" y="185" width="450" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Users -->
+        <mxCell id="users" value="USERS &amp; ACTORS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontStyle=1;fontSize=16;fontColor=#375623;" vertex="1" parent="1">
+          <mxGeometry x="570" y="130" width="300" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="usersText" value="Customer / End User&lt;br&gt;Administrator&lt;br&gt;Operations / Support&lt;br&gt;External Systems" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7FCF4;strokeColor=#A9D18E;align=left;verticalAlign=top;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="570" y="185" width="300" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Requirements -->
+        <mxCell id="req" value="FUNCTIONAL REQUIREMENTS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1;fontSize=16;fontColor=#7F6000;" vertex="1" parent="1">
+          <mxGeometry x="940" y="130" width="500" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="reqText" value="FR-01 Authentication / authorization&lt;br&gt;FR-02 Core business workflow&lt;br&gt;FR-03 CRUD / transaction operations&lt;br&gt;FR-04 Notifications / integrations&lt;br&gt;FR-05 Administration &amp; audit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF5;strokeColor=#E6D28A;align=left;verticalAlign=top;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="940" y="185" width="500" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Architecture -->
+        <mxCell id="arch" value="MVP REFERENCE ARCHITECTURE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4DFEC;strokeColor=#8064A2;fontStyle=1;fontSize=16;fontColor=#403152;" vertex="1" parent="1">
+          <mxGeometry x="50" y="355" width="1390" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="client" value="CLIENT / UX&lt;br&gt;&lt;br&gt;Web / Mobile&lt;br&gt;Responsive UI&lt;br&gt;API client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="gateway" value="API / EDGE&lt;br&gt;&lt;br&gt;API Gateway&lt;br&gt;Rate limiting&lt;br&gt;TLS / routing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#5B9BD5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="350" y="450" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="backend" value="APPLICATION SERVICES&lt;br&gt;&lt;br&gt;REST / GraphQL&lt;br&gt;Business logic&lt;br&gt;Validation&lt;br&gt;Domain services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAD3;strokeColor=#70AD47;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="620" y="450" width="250" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="ai" value="AI / AGENTS (OPTIONAL)&lt;br&gt;&lt;br&gt;LLM&lt;br&gt;RAG&lt;br&gt;Tools / MCP&lt;br&gt;Guardrails" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#ED7D31;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="920" y="450" width="230" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="data" value="DATA LAYER&lt;br&gt;&lt;br&gt;PostgreSQL / SQL&lt;br&gt;Redis cache&lt;br&gt;Object storage&lt;br&gt;Vector DB (if RAG)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="450" width="220" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=2;" edge="1" parent="1" source="client" target="gateway"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="API" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=2;" edge="1" parent="1" source="gateway" target="backend"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="AI calls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=2;" edge="1" parent="1" source="backend" target="ai"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Persistence" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=2;" edge="1" parent="1" source="backend" target="data"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Context / retrieval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeWidth=2;" edge="1" parent="1" source="ai" target="data"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- NFR -->
+        <mxCell id="nfr" value="NON-FUNCTIONAL REQUIREMENTS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#CC0000;fontStyle=1;fontSize=16;fontColor=#660000;" vertex="1" parent="1">
+          <mxGeometry x="50" y="650" width="450" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="nfrText" value="Performance: target response time / throughput&lt;br&gt;Availability: defined MVP SLA&lt;br&gt;Scalability: horizontal service scaling&lt;br&gt;Security: least privilege, secrets management&lt;br&gt;Compliance: logging, retention, privacy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7F7;strokeColor=#E6B8B7;align=left;verticalAlign=top;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="50" y="705" width="450" height="145" as="geometry"/>
+        </mxCell>
+
+        <!-- DevOps -->
+        <mxCell id="devops" value="DELIVERY &amp; OPERATIONS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9E1F2;strokeColor=#4472C4;fontStyle=1;fontSize=16;fontColor=#1F3864;" vertex="1" parent="1">
+          <mxGeometry x="570" y="650" width="420" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="devopsText" value="Source control → CI/CD → Container registry&lt;br&gt;Docker → Kubernetes / managed container platform&lt;br&gt;Infrastructure as Code&lt;br&gt;Automated tests / security scans&lt;br&gt;Monitoring, metrics, logs, tracing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F9FD;strokeColor=#A6B7D4;align=left;verticalAlign=top;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="570" y="705" width="420" height="145" as="geometry"/>
+        </mxCell>
+
+        <!-- Acceptance -->
+        <mxCell id="accept" value="MVP ACCEPTANCE CRITERIA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EADCF8;strokeColor=#9966CC;fontStyle=1;fontSize=16;fontColor=#4B2C6F;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="650" width="380" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="acceptText" value="✓ Critical user journeys pass E2E tests&lt;br&gt;✓ Security baseline validated&lt;br&gt;✓ API contract documented&lt;br&gt;✓ Production deployment repeatable&lt;br&gt;✓ Monitoring &amp; rollback operational&lt;br&gt;✓ Business KPIs measurable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBF8FF;strokeColor=#C9B2E6;align=left;verticalAlign=top;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="705" width="380" height="145" as="geometry"/>
+        </mxCell>
+
+        <!-- Footer -->
+        <mxCell id="footer" value="DOCUMENT STATUS: MVP BASELINE  |  VERSION: 1.0  |  OWNER: PRODUCT / ENGINEERING  |  REVIEW: ARCHITECTURE + SECURITY" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#7F7F7F;" vertex="1" parent="1">
+          <mxGeometry x="50" y="900" width="1390" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
