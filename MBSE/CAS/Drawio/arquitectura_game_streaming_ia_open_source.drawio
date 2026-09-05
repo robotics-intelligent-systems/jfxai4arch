@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" modified="2026-09-05T13:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="gaming-ai-open" name="Arquitectura Gaming Streaming IA Open Source">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="PLATAFORMA DE JUEGOS STREAMING CON IA DE CÓDIGO ABIERTO&#xa;Arquitectura de referencia — alternativa a Google Stadia" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="420" y="20" width="760" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="clients" value="CLIENTES&#xa;Web / PC / Linux / Android / iOS / Smart TV / Gamepad&#xa;WebRTC + QUIC" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=15;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="30" y="150" width="250" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge" value="ACCESO Y ENTREGA GLOBAL&#xa;DNS + DDoS Protection&#xa;CDN&#xa;Global Load Balancer&#xa;Edge POP / PoP" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="150" width="260" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="control" value="PLANO DE CONTROL — MICROSERVICIOS&#xa;&#xa;API Gateway (Kong)&#xa;Identity (Keycloak)&#xa;Catálogo de Juegos&#xa;Gestión de Sesiones&#xa;Matchmaking&#xa;Pagos / Suscripciones&#xa;Inventario / Logros&#xa;Social / Amigos&#xa;Notificaciones&#xa;Soporte / Tickets" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="620" y="130" width="470" height="360" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ai" value="IA DE CÓDIGO ABIERTO&#xa;&#xa;Recomendador — LightFM / Implicit&#xa;Detección de anomalías — PyOD / Isolation Forest&#xa;Analítica — PyTorch / TensorFlow&#xa;LLM — Llama / Mistral&#xa;NPCs inteligentes — Behavior Trees + RAG&#xa;Moderación NLP — spaCy / Detoxify&#xa;Anti-cheat — modelos de anomalías" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="130" width="400" height="360" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="events" value="MENSAJERÍA / EVENTOS&#xa;Apache Kafka" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="620" y="520" width="220" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cache" value="CACHÉ DISTRIBUIDA&#xa;Redis Cluster&#xa;Sesiones / Matchmaking / Hot Data" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="870" y="520" width="220" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="game" value="PLANO DE JUEGO Y STREAMING — MULTI-REGIÓN&#xa;&#xa;Kubernetes / Scheduler + GPU Node Affinity&#xa;&#xa;Región 1: Game Pods + Encoder FFmpeg/NVENC/VAAPI + Streaming Agent (Janus / MediaSoup)&#xa;Región 2: Game Pods + Encoder + Streaming Agent&#xa;Región N: Game Pods + Encoder + Streaming Agent&#xa;&#xa;Transporte de baja latencia: WebRTC / QUIC / TURN / STUN" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="320" y="640" width="770" height="300" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="data" value="DATOS Y ALMACENAMIENTO&#xa;&#xa;PostgreSQL — datos transaccionales&#xa;ClickHouse — analítica / telemetría&#xa;Qdrant — embeddings / RAG&#xa;MinIO — objetos / game assets&#xa;Redis — caché y sesiones&#xa;Backup / DR — Velero / Restic" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="520" width="400" height="250" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="obs" value="OBSERVABILIDAD&#xa;Prometheus — métricas&#xa;Loki — logs&#xa;Jaeger — trazas&#xa;Grafana — dashboards&#xa;Alertmanager — alertas" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="800" width="400" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="infra" value="INFRAESTRUCTURA CLOUD / BARE METAL&#xa;AWS / Azure / GCP / OCI o on-prem&#xa;GPU NVIDIA / AMD&#xa;SSD / NVMe&#xa;Red 10/25/40/100 Gbps&#xa;Multi-región + balanceo regional" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#e6e6e6;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="30" y="640" width="250" height="300" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="devops" value="DEVOPS / GITOPS&#xa;GitLab CI/CD&#xa;Docker / Registry&#xa;Helm Charts&#xa;Terraform IaC&#xa;Argo CD&#xa;Kubernetes" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="30" y="410" width="250" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- Main flows -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1;" edge="1" parent="1" source="clients" target="edge"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1;" edge="1" parent="1" source="edge" target="control"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="IA / inferencia" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1;" edge="1" parent="1" source="control" target="ai"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="sesión / stream" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1;" edge="1" parent="1" source="control" target="game"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="eventos" style="dashed=1;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="control" target="events"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="events" target="cache"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="cache" target="game"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" value="telemetría / datos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="game" target="data"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" value="logs / métricas / trazas" style="dashed=1;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="game" target="obs"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="infra" target="game"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" value="CI/CD + IaC" style="dashed=1;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="devops" target="game"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" value="model serving / RAG" style="dashed=1;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;" edge="1" parent="1" source="data" target="ai"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="legend" value="PRINCIPIOS: baja latencia • GPU scheduling • aislamiento por sesión • escalado horizontal • multi-región • IA open source • observabilidad • seguridad Zero Trust" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="965" width="1210" height="35" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
