@@ -2,6 +2,16 @@
 
 > Modular, self-hosted and hybrid AI platform architecture combining enterprise AI, local models, agent workflows, MCP integrations, declarative YAML automation, local agent-harness routing, Microsoft 365/.NET agents, RAG, observability and cloud-native deployment.
 
+<p align="center">
+  <img src="open-source-ai-architecture.jpg"
+       alt="JFXAI4ARCH Open-Source AI Platform Architecture"
+       width="100%" />
+</p>
+
+<p align="center">
+  <em>Open-source, modular and self-hosted AI platform architecture for enterprise agents, RAG, MCP integrations, hybrid cloud/local inference and cloud-native deployment.</em>
+</p>
+
 ## Overview
 
 `jfxai4arch` defines an open, modular and self-hosted alternative architecture for enterprise AI platforms.
