@@ -1,384 +1,785 @@
+# JFXAI4ARCH — Open-Source AI Platform Architecture
 
-<p align="center">
-  <img src="open-source-ai-architecture.jpg"
-       alt="JFXAI4ARCH Open-Source AI Platform Architecture"
-       width="100%" />
-</p>
-
-<p align="center">
-  <em>Open-source, modular and self-hosted AI platform architecture for enterprise agents, RAG, MCP integrations, hybrid cloud/local inference and cloud-native deployment.</em>
-</p>
-
-# Open-Source Agent-Powered Cloud Platform Architecture
-
-> Modular, self-hosted and hybrid AI platform architecture combining enterprise AI, local models, agent workflows, MCP integrations, declarative YAML automation, local agent-harness routing, Microsoft 365/.NET agents, RAG, observability and cloud-native deployment.
-
-## Overview
-
-`jfxai4arch` defines an open, modular and self-hosted alternative architecture for enterprise AI platforms.
-
-The platform combines:
-
-- Open WebUI for the user-facing AI portal.
-- LangGraph / LangChain for stateful agent orchestration.
-- Model Context Protocol (MCP) for standardized tool and enterprise-system integration.
-- Azure AI / Azure AI Foundry for managed cloud AI.
-- Ollama and vLLM for local inference.
-- LiteLLM or equivalent model-gateway abstractions.
-- Qdrant for vector search and RAG.
-- PostgreSQL for transactional, workflow and operational data.
-- Docker and Kubernetes / Azure Kubernetes Service for deployment.
-- **model-compose** as an alternative declarative YAML automation and AI-service composition layer.
-- **HarnessRouter** as an optional self-hosted local router/runtime abstraction for coding-agent harnesses such as Codex.
-- **Microsoft 365 Agents SDK for C#/.NET** as an optional enterprise-agent SDK for .NET, Microsoft 365, Teams, Copilot Studio and multichannel integrations.
-
-The goal is not to require every component simultaneously. The architecture is designed so that orchestration, model routing, agent runtimes, enterprise SDKs and deployment technologies can be selected or replaced according to workload, privacy, cost and operational requirements.
+> Modular, self-hosted and cloud-native reference architecture for enterprise AI agents, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), hybrid cloud/local inference, and device-level open-weight reasoning with **OpenAI gpt-oss**.
 
 ---
 
-# Updated High-Level Architecture
+## 1. Description and Context
+
+JFXAI4ARCH is an open-source reference architecture for building replaceable, self-hosted and cloud-native artificial-intelligence platforms.
+
+The architecture is organized around:
+
+- Open WebUI for the human-facing AI portal;
+- FastAPI for API and service interfaces;
+- LangGraph and LangChain for agent and workflow orchestration;
+- Model Context Protocol (MCP) for tool and enterprise-system interoperability;
+- Azure AI / Azure AI Foundry for managed inference;
+- local and open-weight language models;
+- Ollama, vLLM and related runtimes for self-hosted inference;
+- Qdrant for vector retrieval;
+- PostgreSQL for application, workflow and state data;
+- Keycloak / Microsoft Entra ID for identity;
+- Langfuse, OpenTelemetry, Prometheus and Grafana for observability;
+- Docker and Kubernetes / AKS for deployment;
+- GitHub Actions and Argo CD for CI/CD and GitOps.
+
+This version extends the hybrid inference architecture with **gpt-oss-20b** as the preferred local/device reasoning model and **gpt-oss-120b** as an optional high-capacity private-infrastructure profile.
+
+The guiding principle remains:
+
+> **Open, modular architecture designed to minimize proprietary lock-in and enable independent implementations.**
+
+---
+
+## 2. Objectives
+
+The architecture is intended to:
+
+1. Provide a reusable enterprise AI platform blueprint.
+2. Support autonomous and semi-autonomous agents.
+3. Integrate enterprise tools and systems through MCP.
+4. Support RAG over enterprise knowledge.
+5. Enable cloud, datacenter, workstation and edge/device inference.
+6. Keep model providers replaceable.
+7. Support privacy-sensitive and disconnected deployments.
+8. Scale through containers and Kubernetes.
+9. Separate orchestration from model execution and enterprise integrations.
+10. Provide traceability, observability, evaluation and human oversight.
+11. Enable local reasoning on supported devices with gpt-oss.
+12. Provide controlled escalation from local models to private-cloud or managed-cloud models.
+
+---
+
+## 3. Architectural Principles
+
+- **Open-source first**
+- **API first**
+- **Cloud native**
+- **Container first**
+- **Kubernetes ready**
+- **Model agnostic**
+- **Vendor neutral**
+- **Local-first where appropriate**
+- **Security by design**
+- **Human-in-the-loop**
+- **Replaceable components**
+- **Observable AI**
+- **Reproducible deployment**
+- **Graceful offline operation**
+- **Data-residency awareness**
+- **Policy-based model routing**
+
+---
+
+## 4. High-Level Architecture
 
 ```text
-Users / Enterprise Teams
-          |
-          v
-+------------------------------+
-|          Open WebUI          |
-| Chat | RAG | Docs | Roles    |
-+--------------+---------------+
-               |
-               v
-+------------------------------+
-|          API Gateway         |
-| OAuth2 | OIDC | Audit | RBAC |
-+--------------+---------------+
-               |
-               v
-+-------------------------------------------------------------+
-|                 AGENT / WORKFLOW LAYER                      |
-|                                                             |
-|  LangGraph / LangChain                                      |
-|       |                                                     |
-|       +---- model-compose (alternative YAML composition)    |
-|       |                                                     |
-|       +---- Microsoft 365 Agents SDK (.NET)                 |
-|                                                             |
-|  Stateful workflows | Tools | Human approval | Multi-agent  |
-+----------------------+--------------------------------------+
-                       |
-          +------------+-------------+
-          |                          |
-          v                          v
-+-------------------------+   +------------------------------+
-| MCP / Enterprise Tools  |   | Agent Harness / Model Access |
-| ERP | CRM | DB | Git    |   |                              |
-| E-Commerce | Azure APIs |   | HarnessRouter (local option) |
-+------------+------------+   | Codex / other harnesses      |
-             |                |                              |
-             |                | LiteLLM / Model Router       |
-             |                | Azure AI / Local LLMs        |
-             |                +--------------+---------------+
-             |                               |
-             +----------------+--------------+
-                              |
-                              v
-+-------------------------------------------------------------+
-|               KNOWLEDGE / APPLICATION DATA                  |
-| Qdrant | PostgreSQL | Files | State | Checkpoints | Audit   |
-+------------------------------+------------------------------+
-                               |
-                               v
-+-------------------------------------------------------------+
-|                 OBSERVABILITY & SECURITY                    |
-| Langfuse | OpenTelemetry | Prometheus | Grafana | Keycloak |
-+------------------------------+------------------------------+
-                               |
-                               v
-+-------------------------------------------------------------+
-|               CONTAINER / CLOUD PLATFORM                    |
-| Docker Compose -> Kubernetes -> Azure Kubernetes Service    |
-+-------------------------------------------------------------+
+                         USERS
+          Employees / Customers / Developers
+                            |
+                            v
+                    +----------------+
+                    |   OPEN WEBUI   |
+                    | Chat / RAG /   |
+                    | Models / Roles |
+                    +-------+--------+
+                            |
+                            v
+                    +----------------+
+                    |  API GATEWAY   |
+                    | FastAPI / RBAC |
+                    | Audit / Limits |
+                    +-------+--------+
+                            |
+                            v
+              +-----------------------------+
+              |  AGENT / WORKFLOW LAYER     |
+              | LangGraph / LangChain       |
+              | Human Approval / State      |
+              +--------------+--------------+
+                             |
+             +---------------+----------------+
+             |               |                |
+             v               v                v
+       +-----------+    +-----------+    +--------------+
+       |    MCP    |    |    RAG    |    | MODEL ROUTER |
+       | Servers   |    | Pipeline  |    | Policy-based |
+       +-----+-----+    +-----+-----+    +------+-------+
+             |                |                 |
+             v                v                 v
+       Enterprise         Qdrant /        +-----+----------------------+
+       Systems            Embeddings      |                            |
+                                          v                            v
+                                  LOCAL / DEVICE AI              CLOUD AI
+                                  gpt-oss-20b                    Azure AI
+                                  Ollama / llama.cpp             Azure Foundry
+                                  LM Studio / ONNX               hosted models
+                                          |
+                                          v
+                                  PRIVATE SERVER AI
+                                  gpt-oss-120b
+                                  vLLM / GPU / K8s
+                                          |
+                                          v
+                                 +----------------+
+                                 | DATA PLATFORM  |
+                                 | PostgreSQL     |
+                                 | Qdrant         |
+                                 +-------+--------+
+                                         |
+                                         v
+                              +----------------------+
+                              | Docker / Kubernetes  |
+                              | Edge / On-Prem / AKS |
+                              +----------------------+
 ```
 
 ---
 
-# Agent and Automation Strategy
+## 5. AI Agent Platform
 
-The project supports multiple complementary orchestration patterns instead of treating one agent framework as mandatory.
+### Open WebUI
 
-## Option A — LangGraph / LangChain
+Open WebUI remains the primary optional enterprise AI portal for:
 
-Recommended for:
+- conversational AI;
+- local/cloud model selection;
+- document upload;
+- RAG;
+- knowledge retrieval;
+- user and role management;
+- API integration;
+- self-hosted deployment.
 
-- stateful workflows;
-- conditional routing;
-- persistent agent state;
-- retry/recovery;
-- tool invocation;
-- human-in-the-loop approval;
-- multi-agent coordination;
-- enterprise MCP integrations.
+### LangGraph / LangChain
 
-## Option B — model-compose
+The orchestration layer coordinates:
 
-Repository:
+- multi-step workflows;
+- agent routing;
+- tool use;
+- persistent state;
+- conditional execution;
+- retries and recovery;
+- human approval;
+- multi-agent collaboration;
+- long-running workflows.
 
-`https://github.com/sdk2035/model-compose`
-
-`model-compose` is included as an **alternative declarative automation and composition layer**.
-
-It allows AI services to be described through a `model-compose.yml` file, with models, autonomous agents, workflows, tools, RAG pipelines and MCP servers treated as composable building blocks.
-
-### Proposed role in jfxai4arch
+Example:
 
 ```text
-model-compose.yml
-       |
-       +-- Models
-       +-- Agents
-       +-- Workflows
-       +-- RAG
-       +-- MCP Servers
-       +-- Tools
-       |
-       v
-Portable AI Service
-       |
-Local | Docker | Kubernetes | Cloud
+User Request
+     |
+     v
+Request Classification
+     |
+     +---- Knowledge Question ---> RAG
+     |
+     +---- Business Action ------> MCP Tool
+     |
+     +---- Local Reasoning ------> gpt-oss-20b
+     |
+     +---- Complex / Escalated --> Private/Cloud Model
 ```
 
-This makes it useful for:
+---
 
-- specification-driven AI deployment;
-- lightweight YAML automation;
-- portable AI-service definitions;
-- local/cloud hybrid workflows;
-- agent prototypes;
-- MCP service composition;
-- reproducible deployment definitions.
+## 6. Model Context Protocol (MCP)
 
-Example architecture profile:
+MCP provides a standardized integration boundary between agents and external systems.
+
+Potential integrations include:
+
+- PostgreSQL;
+- ERP;
+- CRM;
+- e-commerce platforms;
+- REST APIs;
+- Git;
+- file systems;
+- Azure services;
+- business applications;
+- legacy systems;
+- local device tools.
+
+```text
+LangGraph Agent
+      |
+      v
+  MCP Client
+      |
++-----+------------+-------------+
+|                  |             |
+v                  v             v
+Database MCP    Business MCP   Device MCP
+|                  |             |
+v                  v             v
+PostgreSQL      ERP / APIs    Files / OS /
+                              Local Tools
+```
+
+The local gpt-oss model can use the same MCP-mediated tool layer as cloud models, subject to the same authorization and approval policies.
+
+---
+
+# 7. Hybrid AI Model Strategy
+
+JFXAI4ARCH should treat inference as a **routing problem**, not as a single-model dependency.
+
+```text
+                          MODEL ROUTER
+                               |
+        +----------------------+----------------------+
+        |                      |                      |
+        v                      v                      v
+   DEVICE / EDGE          PRIVATE SERVER          CLOUD AI
+   gpt-oss-20b            gpt-oss-120b            Azure AI
+   local reasoning        high-capacity           managed models
+   private RAG            private reasoning       elastic workloads
+   offline capable        datacenter / K8s        external services
+        |
+        v
+ Small / Specialized Models
+ classification / extraction / embeddings
+```
+
+## Workload Matrix
+
+| Workload | Preferred Strategy |
+|---|---|
+| General private chat | gpt-oss-20b local |
+| Internal RAG | gpt-oss-20b + Qdrant |
+| Offline assistant | gpt-oss-20b |
+| Device/edge reasoning | gpt-oss-20b where hardware permits |
+| Local tool-using agent | gpt-oss-20b + MCP |
+| Software/engineering assistant | gpt-oss-20b + MCP + local workspace |
+| High-capacity private reasoning | gpt-oss-120b |
+| Datacenter inference | gpt-oss-120b + vLLM |
+| High-volume classification | Smaller specialized local model |
+| Managed cloud workload | Azure AI / Azure AI Foundry |
+| High-risk action | AI + policy + human approval |
+
+---
+
+# 8. gpt-oss Local / Device Inference
+
+## 8.1 Role in JFXAI4ARCH
+
+**gpt-oss-20b** becomes the primary candidate for the **Local Device Reasoning** building block.
+
+Its architectural purpose is to provide:
+
+- local reasoning;
+- private RAG;
+- offline or intermittently connected operation;
+- local tool use;
+- structured extraction;
+- coding and engineering assistance;
+- edge-side document analysis;
+- privacy-sensitive enterprise assistants;
+- development and rapid prototyping.
+
+The model is not coupled directly to applications. It sits behind a local model gateway.
+
+```text
+Application / Agent
+        |
+        v
+Local Model Gateway
+        |
+        +------------------------------+
+        |                              |
+        v                              v
+   gpt-oss-20b                  Specialized Models
+   reasoning                    embedding/classifier
+        |
+        v
+Inference Runtime
+Ollama / llama.cpp / LM Studio
+ONNX Runtime / Foundry Local
+Metal / PyTorch reference paths
+```
+
+## 8.2 Device Profile
+
+OpenAI describes gpt-oss-20b as an open-weight reasoning model intended for low-latency, local and specialized use cases.
+
+A practical JFXAI4ARCH device profile is:
 
 ```yaml
-automation:
-  primary:
-    type: langgraph
+profile: device-local-ai
 
-  alternative:
-    type: model-compose
-    config: model-compose.yml
+model:
+  family: gpt-oss
+  model: gpt-oss-20b
+  role: local-reasoning
+
+inference:
+  preferred_runtime:
+    - Ollama
+    - llama.cpp
+    - LM Studio
+    - ONNX Runtime / Foundry Local
+  alternative_runtime:
+    - PyTorch
+    - Metal
+
+services:
+  - local-model-gateway
+  - rag-service
+  - mcp-client
+  - policy-service
+  - audit-service
+
+data:
+  - local-qdrant
+  - local-or-private-postgresql
+
+network:
+  offline_capable: true
+  cloud_escalation: optional
 ```
 
-`model-compose` should be treated as an **optional orchestration/deployment alternative**, not as a mandatory replacement for LangGraph.
+## 8.3 Hardware Planning
+
+The gpt-oss family contains:
+
+| Model | Architectural Profile | Memory Target |
+|---|---|---:|
+| **gpt-oss-20b** | Device / workstation / edge | ~16 GB class |
+| **gpt-oss-120b** | Private server / datacenter | ~80 GB class |
+
+These are model-memory targets published for the native quantized releases; actual end-to-end application requirements also depend on runtime, context, KV cache, concurrency, operating system, GPU/accelerator configuration and surrounding services.
+
+## 8.4 Device Categories
+
+### Developer Workstation
+
+```text
+Open WebUI
+   |
+LangGraph
+   |
+Local Model Gateway
+   |
+Ollama / LM Studio
+   |
+gpt-oss-20b
+   |
+Qdrant + PostgreSQL
+```
+
+### Windows AI Device
+
+```text
+JFXAI4ARCH Client
+      |
+Local AI Gateway
+      |
+Foundry Local / ONNX Runtime
+      |
+gpt-oss-20b
+      |
+Local RAG / MCP Tools
+```
+
+### Apple / Metal Development Profile
+
+```text
+Local App
+   |
+Model Adapter
+   |
+Metal-compatible inference path
+   |
+gpt-oss
+```
+
+### Edge / Field Node
+
+```text
+Sensor / User / Local Data
+        |
+        v
+Edge Application
+        |
+        v
+gpt-oss-20b
+        |
+        +---- Local RAG
+        +---- MCP Tools
+        +---- Structured Output
+        |
+        v
+Local Decision Support
+        |
+optional sync
+        v
+Enterprise Platform
+```
 
 ---
 
-# Local Agent Harness Routing
+# 9. Private Server Inference — gpt-oss-120b
 
-## HarnessRouter
-
-Repository:
-
-`https://github.com/sdk2035/harnessrouter`
-
-HarnessRouter is included as an optional **local agent-harness router/runtime layer**.
-
-Its Community Edition is self-hosted and exposes a unified interface for agent harnesses while keeping the execution environment, workspace and provider credentials under local control.
-
-### Proposed role
+gpt-oss-120b is positioned as a **high-capacity private inference tier** rather than the default device model.
 
 ```text
-Application / Agent API
-        |
-        v
-   HarnessRouter
-        |
-+-------+----------------+
-|       |                |
-v       v                v
-Codex   Other Harness   Future UHP-compatible runtimes
-        |
-        v
-Local POSIX Workspace
-Bash | Git | Files | Tools
-```
-
-### Why it complements the existing model router
-
-The existing `jfxai4arch` model-router concept selects **models/providers**:
-
-```text
+Enterprise Agents
+       |
 Model Router
-├── Azure AI
-├── Local LLM
-├── Ollama
-└── vLLM
+       |
+Private Inference API
+       |
+vLLM
+       |
+gpt-oss-120b
+       |
+GPU Server / Kubernetes
 ```
 
-HarnessRouter operates at a different abstraction level: it routes or normalizes access to **agent harness runtimes** that execute work in tool-enabled workspaces.
+Use cases:
 
-The two layers can coexist:
-
-```text
-Agent Request
-     |
-Workflow / Orchestrator
-     |
-+----+----------------------+
-|                           |
-v                           v
-Harness Router          Model Router
-Agent runtimes          Model endpoints
-Codex / harnesses       Azure / local models
-```
-
-### Deployment role
-
-HarnessRouter is especially useful for:
-
-- local-first coding agents;
-- controlled agent workspaces;
-- software-generation jobs;
-- repository automation;
-- sandboxed engineering tasks;
-- session and file-oriented agent execution;
-- avoiding a mandatory hosted agent control plane.
-
-It is an **optional integration** and should not be interpreted as the only model-routing mechanism in the architecture.
+- complex private reasoning;
+- centralized enterprise RAG;
+- high-value agent workflows;
+- larger-context analytical workloads;
+- private datacenter deployments;
+- workloads that should not leave controlled infrastructure.
 
 ---
 
-# Microsoft 365 Agents SDK for .NET
+# 10. Local Model Gateway
 
-Repository:
+The local model gateway should isolate applications from runtime-specific details.
 
-`https://github.com/sdk2035/Agents-for-net`
+Responsibilities:
 
-The project is a fork/reference of Microsoft's **Microsoft 365 Agents SDK for C#/.NET**.
-
-It is included in `jfxai4arch` as an **optional enterprise-agent SDK** for organizations building agents in the .NET ecosystem.
-
-## Proposed role
-
-```text
-Enterprise Channels
-M365 | Teams | Copilot Studio | Webchat
-              |
-              v
- Microsoft 365 Agents SDK
-          C# / .NET
-              |
-     +--------+---------+
-     |                  |
-     v                  v
-Azure AI Foundry    Semantic Kernel
-     |                  |
-     +--------+---------+
-              |
-              v
-     jfxai4arch Services
-     MCP | RAG | APIs
-```
-
-### Potential use cases
-
-- Microsoft 365 enterprise assistants;
-- Teams-based agents;
-- Copilot Studio integrations;
-- multichannel enterprise agents;
-- .NET agent services;
-- Azure AI Foundry integrations;
-- Semantic Kernel integration;
-- authentication and enterprise identity workflows;
-- collaboration between .NET agents and other agent services.
-
-### Architectural positioning
-
-The Microsoft 365 Agents SDK does not replace LangGraph or model-compose globally.
-
-Instead, it adds a specialized C#/.NET agent-development path:
+- OpenAI-compatible or project-defined API façade;
+- model discovery;
+- health checks;
+- context/token policy;
+- request routing;
+- structured-output normalization;
+- tool-call normalization;
+- timeout/retry policy;
+- device capability detection;
+- local/cloud fallback;
+- telemetry;
+- audit metadata.
 
 ```text
-Agent Development
-├── Python
-│   └── LangGraph / LangChain
-├── Declarative
-│   └── model-compose YAML
-└── C# / .NET
-    └── Microsoft 365 Agents SDK
+Agent
+  |
+  v
+Local Model Gateway
+  |
+  +---- gpt-oss-20b / Ollama
+  +---- gpt-oss-20b / llama.cpp
+  +---- gpt-oss-20b / LM Studio
+  +---- gpt-oss / ONNX
+  +---- gpt-oss-120b / vLLM
+  +---- Azure AI fallback
 ```
-
-This improves language and platform diversity while preserving the modular architecture.
 
 ---
 
-# Updated Orchestration Matrix
+# 11. Policy-Based Model Routing
 
-| Layer | Primary / Existing Option | New Alternative / Integration | Role |
-|---|---|---|---|
-| User Interface | Open WebUI | Custom web / M365 channels | Agent interaction |
-| Stateful orchestration | LangGraph | model-compose | Workflow and agent composition |
-| Declarative automation | YAML / deployment manifests | model-compose | AI service definitions |
-| Tool integration | MCP | Native SDK/API adapters | Enterprise tools |
-| Coding-agent runtime | Direct agent integration | HarnessRouter | Local/self-hosted harness abstraction |
-| Model gateway | LiteLLM / custom router | Provider-native routing | Cloud/local model access |
-| .NET enterprise agents | Custom .NET services | Microsoft 365 Agents SDK | M365/Teams/.NET agents |
-| RAG | Qdrant | Replaceable vector stores | Semantic retrieval |
-| Operational data | PostgreSQL | Compatible relational stores | State and transactions |
-| Identity | Keycloak / Entra ID | Channel-specific identity | AuthN/AuthZ |
-| Observability | Langfuse / OpenTelemetry | Prometheus / Grafana | Tracing and metrics |
-| Deployment | Docker / Kubernetes | AKS / on-prem | Runtime infrastructure |
+A policy engine decides whether a request should remain local or be escalated.
+
+Example logic:
+
+```text
+Incoming Request
+      |
+      v
+Data Classification
+      |
+      +---- Restricted / Private
+      |          |
+      |          v
+      |     Local gpt-oss
+      |
+      +---- Offline
+      |          |
+      |          v
+      |     Local gpt-oss
+      |
+      +---- Normal Enterprise
+      |          |
+      |          v
+      |    Local first
+      |
+      +---- Complex / Approved Escalation
+                 |
+                 v
+          Private 120b / Azure AI
+```
+
+Recommended routing criteria:
+
+- data sensitivity;
+- connectivity;
+- device capability;
+- latency;
+- cost;
+- reasoning complexity;
+- context requirements;
+- model evaluation score;
+- user policy;
+- regulatory/data-residency constraints.
 
 ---
 
-# Updated Recommended Technology Stack
+# 12. Retrieval-Augmented Generation
+
+The RAG architecture remains independent of the model family.
+
+```text
+Enterprise Documents
+        |
+Document Processing
+        |
+Text Extraction / Chunking
+        |
+Embedding Model
+        |
+Qdrant
+        |
+Semantic Retrieval
+        |
+Context Assembly
+        |
++-------+------------------+
+|                          |
+v                          v
+gpt-oss-20b             Cloud Model
+Local / Private         Approved Route
+|                          |
++-------------+------------+
+              |
+       Grounded Response
+```
+
+This enables the same RAG corpus to serve local gpt-oss, private-server models and approved cloud models.
+
+---
+
+# 13. Data Architecture
+
+## PostgreSQL
+
+Suggested domains:
+
+```text
+PostgreSQL
+├── Users
+├── Organizations
+├── Roles
+├── Permissions
+├── Agent Configurations
+├── Conversations
+├── Workflow Executions
+├── Business Records
+├── Audit Logs
+├── Application Settings
+├── Agent State / Checkpoints
+├── Model Routing Policies
+├── Device Profiles
+└── Inference Audit Metadata
+```
+
+## Qdrant
+
+Qdrant remains the primary vector-retrieval layer for:
+
+- semantic search;
+- similarity;
+- metadata filtering;
+- hybrid retrieval;
+- enterprise documents;
+- model-independent RAG.
+
+---
+
+# 14. Optional Agent Architecture Extensions
+
+The following components can remain optional, replaceable extensions:
+
+| Component | Role |
+|---|---|
+| **model-compose** | Declarative YAML composition of models, agents and services |
+| **HarnessRouter** | Routing/normalization of local agent harnesses |
+| **Microsoft 365 Agents SDK (.NET)** | Enterprise agents for Microsoft 365 / Teams / .NET ecosystems |
+| **LiteLLM** | Provider-neutral model gateway |
+| **Open WebUI** | Self-hosted AI portal |
+
+Example:
+
+```text
+Open WebUI / M365 / Developer Client
+                |
+                v
+     LangGraph / model-compose
+                |
+      +---------+----------+
+      |                    |
+      v                    v
+     MCP              HarnessRouter
+      |                    |
+      +---------+----------+
+                |
+                v
+           Model Router
+       +--------+---------+
+       |                  |
+       v                  v
+ gpt-oss Local        Azure / Other
+```
+
+---
+
+# 15. Updated Software Dependency Compendium
+
+## User Interface
+
+| Software | Role | Classification |
+|---|---|---|
+| Open WebUI | AI web interface | Core / Optional deployment |
+| Dify | Visual AI platform | Optional |
+| Flowise | Visual workflow builder | Optional |
+
+## Agent Orchestration
+
+| Software | Role | Classification |
+|---|---|---|
+| LangGraph | Stateful agent orchestration | Core |
+| LangChain | LLM/tool/RAG integration | Core |
+| model-compose | Declarative composition | Optional |
+| AutoGen | Multi-agent experimentation | Optional |
+| Haystack | RAG / AI framework | Optional |
+
+## Model Integration & Inference
+
+| Software / Model | Role | Deployment |
+|---|---|---|
+| **gpt-oss-20b** | Local/device reasoning | Device / workstation / edge |
+| **gpt-oss-120b** | Private high-capacity reasoning | Server / datacenter |
+| Ollama | Local model runtime | Development / workstation |
+| llama.cpp | Local lightweight inference | Device / workstation |
+| LM Studio | Local desktop inference | Workstation |
+| vLLM | High-throughput inference | GPU server / Kubernetes |
+| ONNX Runtime / Foundry Local | Local Windows inference path | Device / workstation |
+| Azure AI | Managed inference | Cloud |
+| Azure AI Foundry | Managed AI platform | Cloud |
+| LiteLLM | Model-provider abstraction | Optional gateway |
+
+## Open-Weight Model Families
+
+The architecture remains model-agnostic. Candidate families include:
+
+- **gpt-oss**
+- Llama
+- Qwen
+- Mistral
+- Gemma
+
+Selection criteria:
+
+- license;
+- model size;
+- memory requirements;
+- context length;
+- latency;
+- inference cost;
+- tool support;
+- structured outputs;
+- multilingual performance;
+- benchmark results;
+- privacy requirements;
+- device compatibility.
+
+---
+
+# 16. Updated Dependency Matrix
+
+| Component | Category | Required? | Deployment | Main Function |
+|---|---|---:|---|---|
+| Open WebUI | UI | Recommended | Docker / K8s | AI interface |
+| FastAPI | Backend | Yes | Docker / K8s | APIs |
+| LangGraph | Agents | Yes | Docker / K8s | Orchestration |
+| LangChain | AI framework | Yes | Docker / K8s | LLM integration |
+| MCP | Integration | Yes | Device / Docker / K8s | Tool integration |
+| Qdrant | RAG | Yes | Local / Docker / K8s | Vector retrieval |
+| PostgreSQL | Data | Yes | Local / Docker / Cloud | State and application data |
+| **gpt-oss-20b** | Local AI | Recommended | Device / workstation | Local reasoning |
+| **gpt-oss-120b** | Private AI | Optional | GPU server / K8s | High-capacity reasoning |
+| Ollama | Inference | Optional | Local | Model runtime |
+| llama.cpp | Inference | Optional | Device / local | Lightweight inference |
+| LM Studio | Inference | Optional | Desktop | Local model runtime |
+| vLLM | Inference | Optional | GPU / K8s | Production inference |
+| Azure AI | Cloud AI | Optional | Azure | Managed inference |
+| Keycloak | Security | Optional | Docker / K8s | IAM |
+| Entra ID | Security | Optional | Azure | Enterprise IAM |
+| Langfuse | Observability | Recommended | Docker / K8s | AI tracing |
+| OpenTelemetry | Observability | Recommended | Local / K8s | Telemetry |
+| Prometheus | Monitoring | Recommended | K8s | Metrics |
+| Grafana | Monitoring | Recommended | K8s | Dashboards |
+| Docker | Infrastructure | Yes | Host / CI | Containers |
+| Kubernetes | Infrastructure | Production | K8s | Orchestration |
+| Argo CD | DevOps | Recommended | K8s | GitOps |
+| GitHub Actions | CI/CD | Recommended | GitHub | Automation |
+
+---
+
+# 17. Recommended Technology Stack
 
 ```yaml
 frontend:
-  primary:
-    - Open WebUI
+  - Open WebUI
 
-api:
+backend:
+  - Python
   - FastAPI
-  - REST
-  - OpenAPI
 
 agent_orchestration:
-  primary:
-    - LangGraph
-    - LangChain
-  alternatives:
-    - model-compose
+  - LangGraph
+  - LangChain
 
-declarative_ai_automation:
+optional_orchestration:
   - model-compose
-  - model-compose.yml
 
-agent_harness_runtime:
-  optional:
-    - HarnessRouter
-    - Codex
-
-dotnet_agent_sdk:
-  optional:
-    - Microsoft 365 Agents SDK
-    - C# / .NET
-
-integrations:
+integration:
   - Model Context Protocol
   - MCP Servers
-  - Enterprise REST APIs
 
-ai_models:
-  cloud:
-    - Azure AI
-    - Azure AI Foundry
-  local_development:
-    - Ollama
-  local_production:
-    - vLLM
-  gateway:
-    - LiteLLM
+agent_harness:
+  - HarnessRouter
+
+enterprise_agents:
+  - Microsoft 365 Agents SDK (.NET)
+
+local_ai:
+  device:
+    model:
+      - gpt-oss-20b
+    runtimes:
+      - Ollama
+      - llama.cpp
+      - LM Studio
+      - ONNX Runtime / Foundry Local
+
+  private_server:
+    model:
+      - gpt-oss-120b
+    runtime:
+      - vLLM
+
+cloud_ai:
+  - Azure AI
+  - Azure AI Foundry
 
 knowledge_retrieval:
   - Qdrant
@@ -389,7 +790,7 @@ application_data:
 
 authentication:
   - Keycloak
-  - Microsoft Entra ID
+  - Azure Entra ID
   - OpenID Connect
 
 observability:
@@ -400,229 +801,364 @@ observability:
 
 containerization:
   - Docker
-  - Docker Compose
 
 orchestration:
   - Kubernetes
   - Azure Kubernetes Service
 
-ci_cd:
+delivery:
   - GitHub Actions
   - Argo CD
 ```
 
 ---
 
-# Updated Hybrid Agent Strategy
+# 18. Deployment Profiles
 
-A request may be routed according to the workload rather than to a single universal framework.
+## Profile A — Minimal Device
 
-| Workload | Suggested Architecture |
-|---|---|
-| General enterprise chat | Open WebUI + local/cloud model |
-| Internal RAG | Qdrant + local LLM |
-| Complex stateful workflow | LangGraph + MCP |
-| Declarative YAML workflow | model-compose |
-| Portable AI service | model-compose + Docker/Kubernetes |
-| Coding/repository automation | HarnessRouter + Codex |
-| Local tool-enabled agent execution | HarnessRouter |
-| Microsoft 365 assistant | Microsoft 365 Agents SDK |
-| Teams enterprise agent | Microsoft 365 Agents SDK + Entra ID |
-| .NET enterprise agent | Agents SDK + Azure AI/Semantic Kernel |
-| High-risk business action | Agent workflow + human approval |
-| Large-scale managed reasoning | Azure AI |
-| Private/offline inference | Ollama or vLLM |
+```text
+Local Application
+      |
+gpt-oss-20b
+      |
+llama.cpp / ONNX / local runtime
+      |
+Local Files / MCP Tools
+```
+
+Use when:
+
+- connectivity is limited;
+- privacy is important;
+- a full platform stack is unnecessary.
 
 ---
 
-# Deployment Profiles
-
-## Minimal Local Profile
+## Profile B — Developer Workstation
 
 ```text
 Open WebUI
    |
-Agent API
-   |
 LangGraph
    |
-Ollama
+gpt-oss-20b / Ollama
    |
 Qdrant + PostgreSQL
-```
-
-## Declarative Local Profile
-
-```text
-model-compose.yml
-       |
- model-compose
-       |
-Agents + RAG + MCP
-       |
-Local Models / Cloud APIs
-```
-
-## Coding-Agent Profile
-
-```text
-Developer Portal / API
-        |
-   HarnessRouter
-        |
-      Codex
-        |
-Local Workspace
-Git + Bash + Files
-```
-
-## Microsoft Enterprise Profile
-
-```text
-Teams / M365 / Webchat
-         |
-Microsoft 365 Agents SDK
-         |
-      .NET Agent
-         |
-Azure AI / Semantic Kernel
-         |
-MCP + Enterprise APIs + RAG
-```
-
-## Full Hybrid Enterprise Profile
-
-```text
-Open WebUI / M365 / Enterprise Apps
-               |
-          API Gateway
-               |
-+--------------+----------------+
-|              |                |
-LangGraph   model-compose   .NET Agents SDK
-|              |                |
-+--------------+----------------+
-               |
-       MCP / Tool Services
-               |
-+--------------+----------------+
-|                               |
-HarnessRouter                Model Router
-Codex / harnesses            LiteLLM
-|                               |
-Local workspaces        Azure AI / Ollama / vLLM
-               |
-       Qdrant + PostgreSQL
-               |
- Docker -> Kubernetes -> AKS
+   |
+MCP Tools
 ```
 
 ---
 
-# Dependency Classification
+## Profile C — Private Enterprise
 
-## Core / Recommended
+```text
+Open WebUI
+      |
+FastAPI
+      |
+LangGraph
+      |
+Model Router
+   +--+----------------+
+   |                   |
+gpt-oss-20b        gpt-oss-120b
+local nodes         vLLM cluster
+   |                   |
+   +---------+---------+
+             |
+      Qdrant / PostgreSQL
+             |
+        MCP Services
+```
+
+---
+
+## Profile D — Hybrid Enterprise
+
+```text
+                        Model Router
+                  +---------+----------+
+                  |                    |
+                  v                    v
+              Local AI             Cloud AI
+            gpt-oss-20b           Azure AI
+                  |
+        Private AI Tier
+        gpt-oss-120b
+                  |
+         Policy / Governance
+                  |
+       LangGraph + MCP + RAG
+```
+
+The default policy can be **local-first**, escalating only when permitted and useful.
+
+---
+
+# 19. Security and Privacy
+
+Local inference introduces additional advantages and responsibilities.
+
+Recommended controls:
+
+- local data processing where required;
+- encrypted local storage;
+- secure model artifact storage;
+- signed/verified model packages where available;
+- restricted MCP tool permissions;
+- least-privilege execution;
+- sandboxing for code/tool execution;
+- prompt and tool-call audit trails;
+- secrets isolation;
+- network egress policy;
+- device compliance;
+- model/runtime vulnerability management;
+- supply-chain review;
+- explicit cloud-escalation policy.
+
+Do not assume that local inference is automatically secure; endpoint security, model/runtime provenance, data handling and tool permissions remain critical.
+
+---
+
+# 20. Observability & Evaluation
+
+Every inference tier should expose comparable telemetry.
+
+```text
+User / Agent Request
+        |
+        v
+Model Router
+        |
+        +---- local gpt-oss
+        +---- private gpt-oss
+        +---- cloud model
+        |
+        v
+OpenTelemetry
+        |
+Langfuse
+        |
+Prometheus
+        |
+Grafana
+```
+
+Track:
+
+- selected model;
+- selected runtime;
+- route reason;
+- latency;
+- token/context consumption;
+- tool calls;
+- retrieval evidence;
+- errors/retries;
+- policy decisions;
+- human approvals;
+- evaluation results;
+- device resource utilization.
+
+---
+
+# 21. Suggested Repository Structure
+
+```text
+jfxai4arch/
+├── README.md
+├── MBSE/
+│   └── CAS/
+│       └── Drawio/
+├── docs/
+│   ├── architecture/
+│   ├── models/
+│   │   └── gpt-oss/
+│   ├── device-inference/
+│   ├── mcp/
+│   ├── rag/
+│   ├── security/
+│   └── deployment/
+├── services/
+│   ├── api-gateway/
+│   ├── agent-orchestrator/
+│   ├── local-model-gateway/
+│   ├── rag-service/
+│   ├── model-router/
+│   └── audit-service/
+├── config/
+│   ├── device-profiles/
+│   ├── model-routing/
+│   ├── mcp/
+│   └── model-compose/
+├── deploy/
+│   ├── local/
+│   ├── edge/
+│   ├── docker/
+│   └── kubernetes/
+└── tests/
+    ├── models/
+    ├── routing/
+    ├── rag/
+    └── integration/
+```
+
+---
+
+# 22. Roadmap
+
+## Phase 1 — Baseline Platform
 
 - Open WebUI
+- FastAPI
 - LangGraph / LangChain
 - MCP
 - Qdrant
 - PostgreSQL
-- Docker
-- Kubernetes
 
-## Optional Integrations
+## Phase 2 — gpt-oss Device Profile
 
-- Azure AI / Azure AI Foundry
-- LiteLLM
-- Ollama
-- vLLM
-- Keycloak
-- Langfuse
-- Prometheus
-- Grafana
-- Argo CD
+- add gpt-oss-20b;
+- implement local model gateway;
+- validate Ollama / llama.cpp / LM Studio / ONNX paths;
+- define device capability profiles;
+- add offline RAG.
 
-## New Optional Architecture Components
+## Phase 3 — Policy-Based Hybrid Routing
 
-### model-compose
+- local-first routing;
+- privacy rules;
+- fallback/escalation;
+- local/private/cloud workload policies.
 
-**Category:** Alternative orchestration / declarative automation.
+## Phase 4 — Private High-Capacity Inference
 
-Use when YAML-based portable service composition is preferable to application-code-centric orchestration.
+- gpt-oss-120b;
+- vLLM;
+- GPU server/Kubernetes deployment;
+- load and concurrency testing.
 
-### HarnessRouter
+## Phase 5 — Agent Tooling
 
-**Category:** Local agent-harness runtime/router.
+- MCP-based local tools;
+- HarnessRouter;
+- coding/engineering workspaces;
+- human approval gates.
 
-Use when coding or tool-enabled agent runtimes should execute through a unified local/self-hosted abstraction.
+## Phase 6 — Enterprise Channels
 
-### Microsoft 365 Agents SDK for .NET
+- Microsoft 365 Agents SDK (.NET);
+- Teams / M365 integrations;
+- enterprise identity.
 
-**Category:** Enterprise agent SDK.
+## Phase 7 — Observability & Governance
 
-Use for C#/.NET, Microsoft 365, Teams, Copilot Studio and compatible multichannel agent applications.
+- Langfuse;
+- OpenTelemetry;
+- Prometheus;
+- Grafana;
+- model and route evaluation.
 
----
+## Phase 8 — Production Hardening
 
-# Design Principles
-
-1. **No mandatory orchestration framework**  
-   LangGraph is a strong default, while model-compose provides a declarative alternative.
-
-2. **Separate model routing from harness routing**  
-   Model gateways select inference endpoints; HarnessRouter manages tool-enabled agent harness execution.
-
-3. **Polyglot agent development**  
-   Python, declarative YAML and C#/.NET agent stacks can coexist.
-
-4. **Local-first where appropriate**  
-   Local models, local agent harnesses and self-hosted services can reduce external infrastructure dependencies.
-
-5. **Cloud when beneficial**  
-   Azure AI and AKS remain available for managed enterprise workloads.
-
-6. **Open integrations**  
-   MCP and documented APIs reduce direct coupling between agents and business systems.
-
-7. **Replaceable components**  
-   The architecture should remain modular enough to substitute models, runtimes, stores, gateways and orchestration systems.
+- device security;
+- runtime hardening;
+- model validation;
+- supply-chain checks;
+- backup/recovery;
+- high availability;
+- GitOps.
 
 ---
 
-# Updated Benefits
+# 23. gpt-oss Integration Summary
 
-- Open-source-oriented and self-hosted architecture.
-- Hybrid Azure and local AI.
-- Declarative YAML automation through model-compose.
-- Local/self-hosted coding-agent execution through HarnessRouter.
-- Codex-compatible agent-harness architecture.
-- C#/.NET and Microsoft 365 enterprise agents through the Microsoft 365 Agents SDK.
-- Stateful orchestration through LangGraph.
-- Standardized integrations through MCP.
-- Scalable RAG through Qdrant.
-- Transactional and workflow state through PostgreSQL.
-- Containerized deployment through Docker and Kubernetes.
-- Production deployment path through AKS.
-- Improved portability and infrastructure control.
-- Multiple implementation paths instead of a single framework dependency.
+```text
+                      JFXAI4ARCH
+                           |
+              +------------+------------+
+              |                         |
+              v                         v
+         AI WORKFLOWS              ENTERPRISE TOOLS
+      LangGraph / LangChain             MCP
+              |                         |
+              +------------+------------+
+                           |
+                           v
+                     MODEL ROUTER
+                           |
+       +-------------------+-------------------+
+       |                   |                   |
+       v                   v                   v
+ DEVICE / EDGE       PRIVATE DATACENTER      CLOUD
+ gpt-oss-20b         gpt-oss-120b           Azure AI
+       |                   |                   |
+ Ollama/llama.cpp          vLLM             Managed
+ LM Studio/ONNX            GPU/K8s           Models
+       |                   |                   |
+       +-------------------+-------------------+
+                           |
+                           v
+                RAG / DATA / OBSERVABILITY
+              Qdrant / PostgreSQL / Langfuse
+```
+
+The key architectural addition is not merely another model entry. It is a dedicated **device/local inference tier** that makes privacy-sensitive, offline-capable and low-latency reasoning a first-class deployment profile.
 
 ---
 
-# Conclusion
+# 24. Licensing and Model Status
 
-The updated `jfxai4arch` architecture extends the existing open-source AI platform with three complementary capabilities:
+The gpt-oss models are open-weight models released by OpenAI under the Apache 2.0 license, subject to the applicable gpt-oss usage policy.
 
-1. **model-compose** adds a declarative `model-compose.yml` path for agents, workflows, RAG pipelines, tools and MCP services.
-2. **HarnessRouter** adds a local/self-hosted abstraction for tool-enabled coding-agent harnesses such as Codex.
-3. **Microsoft 365 Agents SDK for .NET** adds a C#/.NET enterprise-agent path for Microsoft 365, Teams, Copilot Studio, Webchat and related integrations.
+They are designed to run on infrastructure controlled by the user or through third-party hosting/inference providers.
 
-Together with Open WebUI, LangGraph, MCP, Azure AI, local LLMs, Qdrant, PostgreSQL, Docker and Kubernetes, these components provide a broader architecture in which workflow orchestration, coding-agent runtimes, model providers and enterprise agent SDKs remain independently replaceable.
+The architecture should keep model artifacts, runtime software and associated licenses documented independently because:
 
-> **Open, modular architecture designed to minimize proprietary lock-in and enable independent implementations.**
+- model license and runtime license may differ;
+- optional integrations may have different distribution requirements;
+- hardware/runtime support changes over time;
+- local deployment does not remove security, privacy or governance responsibilities.
 
-## Intellectual Property and Integration Note
+---
 
-The repositories referenced above remain independent projects and retain their respective licenses, trademarks and upstream ownership. Inclusion in this architecture is a proposed integration/dependency classification and does not imply endorsement, sponsorship, ownership or automatic license compatibility.
+# 25. Disclaimer
 
-Open-source software does not by itself guarantee freedom from third-party patent or other intellectual-property rights; deployments should perform their own technical and legal review.
+JFXAI4ARCH is a reference architecture and engineering project.
+
+It does not by itself certify any deployment as secure, compliant, production-ready or appropriate for safety-critical use.
+
+AI outputs, agent actions and local-device decisions should be validated according to the risk and regulatory requirements of the target domain.
+
+Open-source or open-weight availability does not guarantee freedom from all third-party intellectual-property rights in every jurisdiction.
+
+---
+
+# 26. Strategic Direction
+
+With gpt-oss integrated, the architecture evolves from:
+
+```text
+Cloud AI + Local LLM
+```
+
+to:
+
+```text
+Device AI
+   +
+Private Datacenter AI
+   +
+Cloud AI
+   +
+Policy-Based Routing
+   +
+MCP Tooling
+   +
+RAG
+   +
+Observability
+```
+
+This makes JFXAI4ARCH a stronger reference architecture for **distributed AI**, where the same agent platform can operate across laptops, workstations, edge nodes, private servers and cloud infrastructure while preserving a common orchestration, data, security and governance model.
