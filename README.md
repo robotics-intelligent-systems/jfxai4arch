@@ -1,4 +1,20 @@
-# JFXAI4ARCH — Open-Source AI Platform Architecture
+<p align="center">
+  <img
+    src="open-source-ai-architecture.jpg"
+    alt="JFXAI4ARCH — Open Source AI Architecture with Local gpt-oss Inference"
+    width="100%"
+  />
+</p>
+
+<p align="center">
+  <em>
+    Open-source AI architecture for local, private and hybrid-cloud inference,
+    integrating gpt-oss, LangGraph, LangChain, MCP, RAG, Qdrant, PostgreSQL,
+    Azure AI, observability and cloud-native deployment.
+  </em>
+</p>
+
+# Open-Source AI Platform Architecture
 
 > Modular, self-hosted and cloud-native reference architecture for enterprise AI agents, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), hybrid cloud/local inference, and device-level open-weight reasoning with **OpenAI gpt-oss**.
 
