@@ -1,751 +1,373 @@
-# JFXAI4ARCH — Open-Source AI Platform Architecture
+# jfxai4arch — Open-Source Agent-Powered Cloud Platform Architecture
 
-[![License](https://img.shields.io/badge/license-Open%20Source-blue.svg)](LICENSE)
-[![Architecture](https://img.shields.io/badge/architecture-Cloud--Native-green.svg)](#architecture)
-[![AI](https://img.shields.io/badge/AI-Agentic%20AI-purple.svg)](#ai-agent-platform)
-[![RAG](https://img.shields.io/badge/RAG-Qdrant-orange.svg)](#retrieval-augmented-generation-rag)
-[![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-blue.svg)](#model-context-protocol-mcp)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-Ready-326CE5.svg)](#kubernetes-and-cloud-deployment)
+> Modular, self-hosted and hybrid AI platform architecture combining enterprise AI, local models, agent workflows, MCP integrations, declarative YAML automation, local agent-harness routing, Microsoft 365/.NET agents, RAG, observability and cloud-native deployment.
 
-> **Open-source, modular and self-hosted architecture for enterprise AI agents, RAG, MCP integrations, hybrid cloud/local inference and cloud-native deployment.**
+## Overview
 
----
+`jfxai4arch` defines an open, modular and self-hosted alternative architecture for enterprise AI platforms.
 
-## Table of Contents
+The platform combines:
 
-- [Description and Context](#description-and-context)
-- [Objectives](#objectives)
-- [Functional Scope](#functional-scope)
-- [Architecture](#architecture)
-- [AI Agent Platform](#ai-agent-platform)
-- [Model Context Protocol](#model-context-protocol-mcp)
-- [Hybrid AI Model Strategy](#hybrid-ai-model-strategy)
-- [Retrieval-Augmented Generation](#retrieval-augmented-generation-rag)
-- [Data Architecture](#data-architecture)
-- [Software Dependency Compendium](#software-dependency-compendium)
-- [Dependency Classification](#dependency-classification)
-- [Dependency Matrix](#dependency-matrix)
-- [Recommended Technology Stack](#recommended-technology-stack)
-- [User Guide](#user-guide)
-- [Installation Guide](#installation-guide)
-- [Docker Architecture](#docker-architecture)
-- [Kubernetes and Azure Deployment](#kubernetes-and-azure-deployment)
-- [Security and Privacy](#security-and-privacy)
-- [Observability](#observability)
-- [Testing and Evaluation](#testing-and-evaluation)
-- [Repository Structure](#repository-structure)
-- [How to Contribute](#how-to-contribute)
-- [Code of Conduct](#code-of-conduct)
-- [Authors](#authors)
-- [Additional Information](#additional-information)
-- [License](#license)
-- [Roadmap](#roadmap)
+- Open WebUI for the user-facing AI portal.
+- LangGraph / LangChain for stateful agent orchestration.
+- Model Context Protocol (MCP) for standardized tool and enterprise-system integration.
+- Azure AI / Azure AI Foundry for managed cloud AI.
+- Ollama and vLLM for local inference.
+- LiteLLM or equivalent model-gateway abstractions.
+- Qdrant for vector search and RAG.
+- PostgreSQL for transactional, workflow and operational data.
+- Docker and Kubernetes / Azure Kubernetes Service for deployment.
+- **model-compose** as an alternative declarative YAML automation and AI-service composition layer.
+- **HarnessRouter** as an optional self-hosted local router/runtime abstraction for coding-agent harnesses such as Codex.
+- **Microsoft 365 Agents SDK for C#/.NET** as an optional enterprise-agent SDK for .NET, Microsoft 365, Teams, Copilot Studio and multichannel integrations.
+
+The goal is not to require every component simultaneously. The architecture is designed so that orchestration, model routing, agent runtimes, enterprise SDKs and deployment technologies can be selected or replaced according to workload, privacy, cost and operational requirements.
 
 ---
 
-# Description and Context
-
-**JFXAI4ARCH** is an open-source reference architecture for building modular, self-hosted and cloud-native artificial intelligence platforms.
-
-The architecture combines:
-
-- Open WebUI
-- LangGraph
-- LangChain
-- Model Context Protocol (MCP)
-- Azure AI / Azure AI Foundry
-- Local and open-weight language models
-- Ollama
-- vLLM
-- Qdrant
-- PostgreSQL
-- FastAPI
-- Docker
-- Kubernetes
-- Azure Kubernetes Service
-- Keycloak / Azure Entra ID
-- Langfuse
-- OpenTelemetry
-- Prometheus
-- Grafana
-- GitHub Actions
-- Argo CD
-
-The objective is to provide an alternative architectural foundation to proprietary AI platforms while maintaining flexibility between cloud AI services and local inference.
-
-The current project explicitly describes this architecture as a modular, open-source and self-hosted alternative based on Open WebUI, LangGraph, MCP, Azure AI, local LLMs, Qdrant, PostgreSQL, Docker and Kubernetes.
-
----
-
-# Objectives
-
-## Primary Objectives
-
-1. Provide a reusable enterprise AI architecture.
-2. Support autonomous and semi-autonomous AI agents.
-3. Integrate enterprise systems through MCP.
-4. Provide Retrieval-Augmented Generation capabilities.
-5. Support hybrid cloud/local inference.
-6. Minimize vendor lock-in.
-7. Support self-hosted deployments.
-8. Provide Kubernetes-native scalability.
-9. Separate AI orchestration from enterprise integrations.
-10. Provide observability and governance for AI workloads.
-
-## Architectural Principles
-
-- Open source first
-- API first
-- Cloud native
-- Container first
-- Kubernetes ready
-- Model agnostic
-- Vendor neutral
-- Security by design
-- Human-in-the-loop
-- Replaceable components
-- Observable AI
-- Reproducible deployment
-
----
-
-# Functional Scope
-
-JFXAI4ARCH is intended to support:
-
-### Enterprise AI Assistants
-
-Conversational interfaces for employees, customers and enterprise users.
-
-### AI Agents
-
-Stateful agents capable of:
-
-- reasoning
-- planning
-- tool execution
-- workflow orchestration
-- API interaction
-- database interaction
-- multi-step tasks
-- human approval
-
-### RAG Applications
-
-Knowledge assistants based on:
-
-- enterprise documents
-- databases
-- internal repositories
-- APIs
-- semantic search
-- vector databases
-
-### Business Automation
-
-Agents can interact with:
-
-- ERP systems
-- e-commerce platforms
-- CRM systems
-- PostgreSQL
-- REST APIs
-- Git repositories
-- file systems
-- internal services
-
-### Cloud-Native AI
-
-Production deployment through:
-
-- Docker
-- Kubernetes
-- Azure Kubernetes Service
-- Azure AI
-- Azure infrastructure
-
----
-
-# Architecture
-
-## High-Level Architecture
+# Updated High-Level Architecture
 
 ```text
-                         ┌─────────────────────────┐
-                         │         USERS           │
-                         │ Employees / Customers   │
-                         │ Developers / Operators  │
-                         └────────────┬────────────┘
-                                      │
-                                      ▼
-                         ┌─────────────────────────┐
-                         │       OPEN WEBUI        │
-                         │ Chat / RAG / Documents  │
-                         │ Users / Roles / Models  │
-                         └────────────┬────────────┘
-                                      │
-                                      ▼
-                         ┌─────────────────────────┐
-                         │       API GATEWAY       │
-                         │ FastAPI / OAuth2 / RBAC │
-                         │ Rate Limits / Auditing  │
-                         └────────────┬────────────┘
-                                      │
-                                      ▼
-                         ┌─────────────────────────┐
-                         │       LANGGRAPH         │
-                         │ Agents / State / Tools  │
-                         │ Routing / Workflows     │
-                         └────────────┬────────────┘
-                                      │
-                     ┌────────────────┼────────────────┐
-                     │                │                │
-                     ▼                ▼                ▼
-              ┌────────────┐   ┌────────────┐   ┌────────────┐
-              │ MCP        │   │ RAG        │   │ Model      │
-              │ Servers    │   │ Pipeline   │   │ Router     │
-              └─────┬──────┘   └─────┬──────┘   └─────┬──────┘
-                    │                │                │
-                    ▼                ▼                ▼
-              Enterprise       Qdrant / DB       Azure AI
-              Systems          Embeddings        Local LLM
-                                                   Ollama
-                                                   vLLM
-                                     
-                         ┌─────────────────────────┐
-                         │     DATA PLATFORM       │
-                         │ PostgreSQL / Qdrant     │
-                         └────────────┬────────────┘
-                                      │
-                                      ▼
-                         ┌─────────────────────────┐
-                         │ DOCKER / KUBERNETES    │
-                         │       / AKS            │
-                         └─────────────────────────┘
-```
-
-The architecture follows the structure documented by the current project, including Open WebUI, API Gateway, LangGraph, MCP, model routing, Qdrant, PostgreSQL and Kubernetes/Azure deployment.
-
----
-
-# AI Agent Platform
-
-## Open WebUI
-
-Open WebUI provides the principal human-facing interface.
-
-Capabilities:
-
-- conversational AI
-- model selection
-- document upload
-- RAG
-- knowledge retrieval
-- user management
-- role management
-- API integration
-- extensible pipelines
-
-It can operate as the primary enterprise AI portal.
-
----
-
-## LangGraph
-
-LangGraph provides the stateful agent orchestration layer.
-
-Supported patterns include:
-
-- multi-step workflows
-- agent routing
-- tool execution
-- persistent state
-- conditional execution
-- retries
-- recovery
-- human approval
-- multi-agent collaboration
-- long-running workflows
-
-Example:
-
-```text
-User Request
-     │
-     ▼
-Request Classification
-     │
-     ├── Knowledge Question
-     │       │
-     │       ▼
-     │     RAG
-     │
-     ├── Business Action
-     │       │
-     │       ▼
-     │     MCP Tool
-     │
-     └── Complex Reasoning
-             │
-             ▼
-          AI Model
+Users / Enterprise Teams
+          |
+          v
++------------------------------+
+|          Open WebUI          |
+| Chat | RAG | Docs | Roles    |
++--------------+---------------+
+               |
+               v
++------------------------------+
+|          API Gateway         |
+| OAuth2 | OIDC | Audit | RBAC |
++--------------+---------------+
+               |
+               v
++-------------------------------------------------------------+
+|                 AGENT / WORKFLOW LAYER                      |
+|                                                             |
+|  LangGraph / LangChain                                      |
+|       |                                                     |
+|       +---- model-compose (alternative YAML composition)    |
+|       |                                                     |
+|       +---- Microsoft 365 Agents SDK (.NET)                 |
+|                                                             |
+|  Stateful workflows | Tools | Human approval | Multi-agent  |
++----------------------+--------------------------------------+
+                       |
+          +------------+-------------+
+          |                          |
+          v                          v
++-------------------------+   +------------------------------+
+| MCP / Enterprise Tools  |   | Agent Harness / Model Access |
+| ERP | CRM | DB | Git    |   |                              |
+| E-Commerce | Azure APIs |   | HarnessRouter (local option) |
++------------+------------+   | Codex / other harnesses      |
+             |                |                              |
+             |                | LiteLLM / Model Router       |
+             |                | Azure AI / Local LLMs        |
+             |                +--------------+---------------+
+             |                               |
+             +----------------+--------------+
+                              |
+                              v
++-------------------------------------------------------------+
+|               KNOWLEDGE / APPLICATION DATA                  |
+| Qdrant | PostgreSQL | Files | State | Checkpoints | Audit   |
++------------------------------+------------------------------+
+                               |
+                               v
++-------------------------------------------------------------+
+|                 OBSERVABILITY & SECURITY                    |
+| Langfuse | OpenTelemetry | Prometheus | Grafana | Keycloak |
++------------------------------+------------------------------+
+                               |
+                               v
++-------------------------------------------------------------+
+|               CONTAINER / CLOUD PLATFORM                    |
+| Docker Compose -> Kubernetes -> Azure Kubernetes Service    |
++-------------------------------------------------------------+
 ```
 
 ---
 
-# Model Context Protocol (MCP)
+# Agent and Automation Strategy
 
-MCP provides a standardized integration mechanism between AI agents and external systems.
+The project supports multiple complementary orchestration patterns instead of treating one agent framework as mandatory.
 
-Potential MCP integrations include:
+## Option A — LangGraph / LangChain
 
-- PostgreSQL
-- ERP
-- e-commerce
-- REST APIs
-- Git
-- file systems
-- Azure services
-- business applications
-- legacy systems
+Recommended for:
 
-Architecture:
+- stateful workflows;
+- conditional routing;
+- persistent agent state;
+- retry/recovery;
+- tool invocation;
+- human-in-the-loop approval;
+- multi-agent coordination;
+- enterprise MCP integrations.
 
-```text
-                    LangGraph Agent
-                           │
-                           ▼
-                       MCP Client
-                           │
-          ┌────────────────┼────────────────┐
-          │                │                │
-          ▼                ▼                ▼
-     PostgreSQL          ERP            E-Commerce
-       Server           Server             Server
-          │                │                │
-          └────────────────┼────────────────┘
-                           │
-                           ▼
-                     Enterprise APIs
-```
+## Option B — model-compose
 
-MCP reduces direct coupling between the agent layer and enterprise integrations.
+Repository:
 
----
+`https://github.com/sdk2035/model-compose`
 
-# Hybrid AI Model Strategy
+`model-compose` is included as an **alternative declarative automation and composition layer**.
 
-The architecture supports multiple inference strategies.
+It allows AI services to be described through a `model-compose.yml` file, with models, autonomous agents, workflows, tools, RAG pipelines and MCP servers treated as composable building blocks.
+
+### Proposed role in jfxai4arch
 
 ```text
-                         Model Router
-                              │
-             ┌────────────────┼────────────────┐
-             │                │                │
-             ▼                ▼                ▼
-        Azure AI          Local LLM       Small Model
-             │                │                │
-       Reasoning        Private Data     Classification
-       Enterprise       Cost Control     Extraction
-       Workloads        Offline          Routing
+model-compose.yml
+       |
+       +-- Models
+       +-- Agents
+       +-- Workflows
+       +-- RAG
+       +-- MCP Servers
+       +-- Tools
+       |
+       v
+Portable AI Service
+       |
+Local | Docker | Kubernetes | Cloud
 ```
 
-## Workload Matrix
-
-| Workload | Recommended Strategy |
-|---|---|
-| General chat | Local LLM |
-| Internal RAG | Local LLM + Qdrant |
-| Complex reasoning | Azure AI |
-| High-volume classification | Small local model |
-| Structured extraction | Local model / Azure AI |
-| Enterprise automation | LangGraph + MCP |
-| High-risk action | AI + human approval |
-
-The existing project defines this hybrid routing approach explicitly.
-
----
-
-# Retrieval-Augmented Generation (RAG)
-
-## RAG Architecture
-
-```text
-Enterprise Documents
-        │
-        ▼
-Document Processing
-        │
-        ▼
-Text Extraction
-        │
-        ▼
-Chunking
-        │
-        ▼
-Embedding Model
-        │
-        ▼
-Qdrant
-        │
-        ▼
-Semantic Retrieval
-        │
-        ▼
-Context Assembly
-        │
-        ▼
-Language Model
-        │
-        ▼
-Grounded Response
-```
-
-## Qdrant
-
-Qdrant acts as the vector database for:
-
-- semantic search
-- vector similarity
-- metadata filtering
-- hybrid retrieval
-- document retrieval
-- embeddings
-- scalable vector indexing
-
-The project identifies Qdrant as its principal vector retrieval component.
-
----
-
-# Data Architecture
-
-## PostgreSQL
-
-PostgreSQL is the principal transactional data store.
-
-Recommended domains:
-
-```text
-PostgreSQL
-│
-├── Users
-├── Organizations
-├── Roles
-├── Permissions
-├── Agent Configurations
-├── Conversations
-├── Workflow Executions
-├── Business Records
-├── Audit Logs
-├── Application Settings
-└── Agent State / Checkpoints
-```
-
-PostgreSQL may also persist LangGraph workflow state.
-
----
-
-# Software Dependency Compendium
-
-This section converts the project's technology references into a reusable dependency catalog following the documentation requirements of the reference repository template.
-
-The reference template specifically requests documentation of external resources, libraries, frameworks, databases, licenses and tested versions, together with operating-system, package-manager, SDK/compiler, internal dependency and test requirements.
-
----
-
-## 1. User Interface
-
-| Software | Role | Type | License / Status |
-|---|---|---|---|
-| Open WebUI | AI web interface | Core | Open source |
-| Dify | Visual AI platform | Optional | Open source |
-| Flowise | Visual AI workflow builder | Optional | Open source |
-
----
-
-## 2. Agent Orchestration
-
-| Software | Role | Type |
-|---|---|---|
-| LangGraph | Stateful agent orchestration | Core |
-| LangChain | LLM application framework | Core |
-| AutoGen | Multi-agent orchestration | Optional |
-| Haystack | RAG/AI framework | Optional |
-
----
-
-## 3. Model Integration
-
-| Software | Role | Type |
-|---|---|---|
-| Azure AI | Managed AI inference | Cloud |
-| Azure AI Foundry | AI development platform | Cloud |
-| Ollama | Local model runtime | Core/Development |
-| vLLM | High-performance inference | Production |
-| LiteLLM | Model gateway | Optional |
-
----
-
-## 4. Open-Weight Models
-
-Potential model families include:
-
-- Llama
-- Qwen
-- Mistral
-- Gemma
-
-Model selection should be based on:
-
-- license
-- model size
-- hardware requirements
-- context window
-- latency
-- inference cost
-- multilingual capabilities
-- benchmark performance
-- security requirements
-
----
-
-# 5. Retrieval and Vector Databases
-
-| Software | Role | Type |
-|---|---|---|
-| Qdrant | Vector database | Core |
-| PostgreSQL | Transactional database | Core |
-| PostgreSQL + vector extension | Relational/vector workloads | Optional |
-| Redis | Cache/session layer | Optional |
-| Object storage | Documents/artifacts | Optional |
-
----
-
-# 6. Identity and Access Management
-
-| Software | Role |
-|---|---|
-| Keycloak | Self-hosted IAM / SSO |
-| Azure Entra ID | Enterprise identity |
-| OpenID Connect | Authentication protocol |
-| OAuth 2.0 | Authorization protocol |
-
----
-
-# 7. API and Backend
-
-| Software | Role |
-|---|---|
-| Python | Primary backend language |
-| FastAPI | API framework |
-| REST | Enterprise integration |
-| JSON | API data format |
-| WebSocket | Real-time communication |
-| MCP | AI-tool integration protocol |
-
----
-
-# 8. Observability
-
-| Software | Role |
-|---|---|
-| Langfuse | LLM tracing/evaluation |
-| OpenTelemetry | Telemetry standard |
-| Prometheus | Metrics |
-| Grafana | Visualization |
-| Azure Monitor | Azure observability |
-
----
-
-# 9. Containerization
-
-| Software | Role |
-|---|---|
-| Docker | Container runtime/build |
-| Docker Compose | Local multi-service deployment |
-| OCI images | Portable container artifacts |
-
----
-
-# 10. Kubernetes
-
-| Software | Role |
-|---|---|
-| Kubernetes | Container orchestration |
-| Azure Kubernetes Service | Managed Kubernetes |
-| Helm | Package management |
-| Ingress | HTTP routing |
-| Secrets | Secret management |
-| ConfigMaps | Configuration |
-| Horizontal Pod Autoscaler | Scaling |
-
----
-
-# 11. CI/CD and GitOps
-
-| Software | Role |
-|---|---|
-| GitHub Actions | CI/CD |
-| Argo CD | GitOps |
-| Git | Source control |
-| Container Registry | Image storage |
-
----
-
-# 12. Security
-
-Recommended components:
-
-- OAuth 2.0
-- OpenID Connect
-- Keycloak
-- Azure Entra ID
-- TLS
-- Kubernetes Secrets
-- Azure Key Vault
-- network policies
-- RBAC
-- audit logging
-- container scanning
-- dependency scanning
-- static analysis
-
----
-
-# Dependency Classification
-
-Every dependency should be classified as one of the following:
-
-| Classification | Description |
-|---|---|
-| Core | Required by the architecture |
-| Runtime | Required during execution |
-| Build | Required to compile/build |
-| Development | Required by developers |
-| Test | Required for testing |
-| Optional | Replaceable capability |
-| Cloud | External cloud service |
-| Integration | Enterprise integration |
-| Research | Experimental technology |
-| Reference | Architectural reference |
-| Legacy | Maintained for compatibility |
-| Deprecated | Not recommended for new deployments |
-
----
-
-# Dependency Specification Template
-
-Each dependency should eventually be documented using the following structure:
+This makes it useful for:
+
+- specification-driven AI deployment;
+- lightweight YAML automation;
+- portable AI-service definitions;
+- local/cloud hybrid workflows;
+- agent prototypes;
+- MCP service composition;
+- reproducible deployment definitions.
+
+Example architecture profile:
 
 ```yaml
-name:
-category:
-dependency_type:
-purpose:
+automation:
+  primary:
+    type: langgraph
 
-repository:
-official_website:
-
-license:
-license_compatibility:
-
-programming_language:
-version_tested:
-
-installation:
-runtime_requirements:
-build_requirements:
-
-api:
-protocols:
-data_formats:
-
-integration:
-security_considerations:
-privacy_considerations:
-
-performance_considerations:
-hardware_requirements:
-operating_systems:
-
-container_support:
-ai_integration:
-rag_integration:
-mcp_integration:
-
-status:
-maintenance_status:
-last_review:
-
-documentation:
+  alternative:
+    type: model-compose
+    config: model-compose.yml
 ```
 
-This structure is intended to make the compendium maintainable as the platform evolves.
+`model-compose` should be treated as an **optional orchestration/deployment alternative**, not as a mandatory replacement for LangGraph.
 
 ---
 
-# Dependency Matrix
+# Local Agent Harness Routing
 
-| Component | Category | Required | Deployment | Main Function |
-|---|---|---:|---|---|
-| Open WebUI | UI | Yes | Docker/K8s | AI interface |
-| FastAPI | Backend | Yes | Docker/K8s | API |
-| LangGraph | Agents | Yes | Docker/K8s | Orchestration |
-| LangChain | AI Framework | Yes | Docker/K8s | LLM integration |
-| MCP | Integration | Yes | Docker/K8s | Tool integration |
-| Qdrant | RAG | Yes | Docker/K8s | Vector search |
-| PostgreSQL | Data | Yes | Docker/Azure | Transactional data |
-| Ollama | Inference | Optional | Local | Local models |
-| vLLM | Inference | Optional | GPU/K8s | Production inference |
-| Azure AI | AI | Optional | Azure | Managed inference |
-| Keycloak | Security | Optional | Docker/K8s | IAM |
-| Entra ID | Security | Optional | Azure | Enterprise IAM |
-| Langfuse | Observability | Recommended | Docker/K8s | AI tracing |
-| OpenTelemetry | Observability | Recommended | K8s | Telemetry |
-| Prometheus | Observability | Recommended | K8s | Metrics |
-| Grafana | Observability | Recommended | K8s | Dashboards |
-| Docker | Infrastructure | Yes | Host/CI | Containers |
-| Kubernetes | Infrastructure | Production | K8s | Orchestration |
-| Helm | Deployment | Recommended | K8s | Packaging |
-| Argo CD | DevOps | Recommended | K8s | GitOps |
-| GitHub Actions | CI/CD | Recommended | GitHub | Automation |
+## HarnessRouter
+
+Repository:
+
+`https://github.com/sdk2035/harnessrouter`
+
+HarnessRouter is included as an optional **local agent-harness router/runtime layer**.
+
+Its Community Edition is self-hosted and exposes a unified interface for agent harnesses while keeping the execution environment, workspace and provider credentials under local control.
+
+### Proposed role
+
+```text
+Application / Agent API
+        |
+        v
+   HarnessRouter
+        |
++-------+----------------+
+|       |                |
+v       v                v
+Codex   Other Harness   Future UHP-compatible runtimes
+        |
+        v
+Local POSIX Workspace
+Bash | Git | Files | Tools
+```
+
+### Why it complements the existing model router
+
+The existing `jfxai4arch` model-router concept selects **models/providers**:
+
+```text
+Model Router
+├── Azure AI
+├── Local LLM
+├── Ollama
+└── vLLM
+```
+
+HarnessRouter operates at a different abstraction level: it routes or normalizes access to **agent harness runtimes** that execute work in tool-enabled workspaces.
+
+The two layers can coexist:
+
+```text
+Agent Request
+     |
+Workflow / Orchestrator
+     |
++----+----------------------+
+|                           |
+v                           v
+Harness Router          Model Router
+Agent runtimes          Model endpoints
+Codex / harnesses       Azure / local models
+```
+
+### Deployment role
+
+HarnessRouter is especially useful for:
+
+- local-first coding agents;
+- controlled agent workspaces;
+- software-generation jobs;
+- repository automation;
+- sandboxed engineering tasks;
+- session and file-oriented agent execution;
+- avoiding a mandatory hosted agent control plane.
+
+It is an **optional integration** and should not be interpreted as the only model-routing mechanism in the architecture.
 
 ---
 
-# Recommended Technology Stack
+# Microsoft 365 Agents SDK for .NET
+
+Repository:
+
+`https://github.com/sdk2035/Agents-for-net`
+
+The project is a fork/reference of Microsoft's **Microsoft 365 Agents SDK for C#/.NET**.
+
+It is included in `jfxai4arch` as an **optional enterprise-agent SDK** for organizations building agents in the .NET ecosystem.
+
+## Proposed role
+
+```text
+Enterprise Channels
+M365 | Teams | Copilot Studio | Webchat
+              |
+              v
+ Microsoft 365 Agents SDK
+          C# / .NET
+              |
+     +--------+---------+
+     |                  |
+     v                  v
+Azure AI Foundry    Semantic Kernel
+     |                  |
+     +--------+---------+
+              |
+              v
+     jfxai4arch Services
+     MCP | RAG | APIs
+```
+
+### Potential use cases
+
+- Microsoft 365 enterprise assistants;
+- Teams-based agents;
+- Copilot Studio integrations;
+- multichannel enterprise agents;
+- .NET agent services;
+- Azure AI Foundry integrations;
+- Semantic Kernel integration;
+- authentication and enterprise identity workflows;
+- collaboration between .NET agents and other agent services.
+
+### Architectural positioning
+
+The Microsoft 365 Agents SDK does not replace LangGraph or model-compose globally.
+
+Instead, it adds a specialized C#/.NET agent-development path:
+
+```text
+Agent Development
+├── Python
+│   └── LangGraph / LangChain
+├── Declarative
+│   └── model-compose YAML
+└── C# / .NET
+    └── Microsoft 365 Agents SDK
+```
+
+This improves language and platform diversity while preserving the modular architecture.
+
+---
+
+# Updated Orchestration Matrix
+
+| Layer | Primary / Existing Option | New Alternative / Integration | Role |
+|---|---|---|---|
+| User Interface | Open WebUI | Custom web / M365 channels | Agent interaction |
+| Stateful orchestration | LangGraph | model-compose | Workflow and agent composition |
+| Declarative automation | YAML / deployment manifests | model-compose | AI service definitions |
+| Tool integration | MCP | Native SDK/API adapters | Enterprise tools |
+| Coding-agent runtime | Direct agent integration | HarnessRouter | Local/self-hosted harness abstraction |
+| Model gateway | LiteLLM / custom router | Provider-native routing | Cloud/local model access |
+| .NET enterprise agents | Custom .NET services | Microsoft 365 Agents SDK | M365/Teams/.NET agents |
+| RAG | Qdrant | Replaceable vector stores | Semantic retrieval |
+| Operational data | PostgreSQL | Compatible relational stores | State and transactions |
+| Identity | Keycloak / Entra ID | Channel-specific identity | AuthN/AuthZ |
+| Observability | Langfuse / OpenTelemetry | Prometheus / Grafana | Tracing and metrics |
+| Deployment | Docker / Kubernetes | AKS / on-prem | Runtime infrastructure |
+
+---
+
+# Updated Recommended Technology Stack
 
 ```yaml
 frontend:
-  - Open WebUI
+  primary:
+    - Open WebUI
 
-backend:
-  - Python
+api:
   - FastAPI
+  - REST
+  - OpenAPI
 
 agent_orchestration:
-  - LangGraph
-  - LangChain
+  primary:
+    - LangGraph
+    - LangChain
+  alternatives:
+    - model-compose
 
-integration:
+declarative_ai_automation:
+  - model-compose
+  - model-compose.yml
+
+agent_harness_runtime:
+  optional:
+    - HarnessRouter
+    - Codex
+
+dotnet_agent_sdk:
+  optional:
+    - Microsoft 365 Agents SDK
+    - C# / .NET
+
+integrations:
   - Model Context Protocol
   - MCP Servers
+  - Enterprise REST APIs
 
-cloud_ai:
-  - Azure AI
-  - Azure AI Foundry
-
-local_ai:
-  development:
+ai_models:
+  cloud:
+    - Azure AI
+    - Azure AI Foundry
+  local_development:
     - Ollama
-
-  production:
+  local_production:
     - vLLM
-
-open_models:
-  - Llama
-  - Qwen
-  - Mistral
-  - Gemma
+  gateway:
+    - LiteLLM
 
 knowledge_retrieval:
   - Qdrant
@@ -756,7 +378,7 @@ application_data:
 
 authentication:
   - Keycloak
-  - Azure Entra ID
+  - Microsoft Entra ID
   - OpenID Connect
 
 observability:
@@ -767,6 +389,7 @@ observability:
 
 containerization:
   - Docker
+  - Docker Compose
 
 orchestration:
   - Kubernetes
@@ -777,820 +400,218 @@ ci_cd:
   - Argo CD
 ```
 
-The technology stack corresponds closely to the architecture currently documented in JFXAI4ARCH.
+---
+
+# Updated Hybrid Agent Strategy
+
+A request may be routed according to the workload rather than to a single universal framework.
+
+| Workload | Suggested Architecture |
+|---|---|
+| General enterprise chat | Open WebUI + local/cloud model |
+| Internal RAG | Qdrant + local LLM |
+| Complex stateful workflow | LangGraph + MCP |
+| Declarative YAML workflow | model-compose |
+| Portable AI service | model-compose + Docker/Kubernetes |
+| Coding/repository automation | HarnessRouter + Codex |
+| Local tool-enabled agent execution | HarnessRouter |
+| Microsoft 365 assistant | Microsoft 365 Agents SDK |
+| Teams enterprise agent | Microsoft 365 Agents SDK + Entra ID |
+| .NET enterprise agent | Agents SDK + Azure AI/Semantic Kernel |
+| High-risk business action | Agent workflow + human approval |
+| Large-scale managed reasoning | Azure AI |
+| Private/offline inference | Ollama or vLLM |
 
 ---
 
-# User Guide
+# Deployment Profiles
 
-## 1. Start the Platform
-
-Start the local infrastructure:
-
-```bash
-docker compose up -d
-```
-
-## 2. Access Open WebUI
-
-Open the configured Open WebUI endpoint.
-
-## 3. Configure Models
-
-Configure:
-
-- local models
-- Azure AI models
-- model routing policies
-
-## 4. Configure Knowledge
-
-Load:
-
-- PDFs
-- documents
-- enterprise knowledge
-- structured data
-- repositories
-
-## 5. Configure RAG
-
-Configure:
+## Minimal Local Profile
 
 ```text
-Documents
-   ↓
-Embedding
-   ↓
-Qdrant
-   ↓
-Retriever
-   ↓
+Open WebUI
+   |
+Agent API
+   |
 LangGraph
-   ↓
-LLM
+   |
+Ollama
+   |
+Qdrant + PostgreSQL
 ```
 
-## 6. Configure MCP
-
-Register MCP servers for required enterprise systems.
-
-## 7. Execute Agent Workflows
-
-Users can submit:
-
-- questions
-- document queries
-- business actions
-- automation tasks
-- multi-step workflows
-
----
-
-# Installation Guide
-
-## System Requirements
-
-Recommended baseline:
+## Declarative Local Profile
 
 ```text
-OS:
-  Linux
-  macOS
-  Windows + WSL2
-
-Container:
-  Docker
-  Docker Compose
-
-Development:
-  Python 3.x
-  Git
-
-Production:
-  Kubernetes
-  Helm
-  Container Registry
-
-AI:
-  CPU inference or
-  NVIDIA GPU for accelerated inference
-
-Data:
-  PostgreSQL
-  Qdrant
+model-compose.yml
+       |
+ model-compose
+       |
+Agents + RAG + MCP
+       |
+Local Models / Cloud APIs
 ```
 
-> Exact tested versions should be recorded in the project's dependency matrix before declaring a release as reproducible.
-
----
-
-# Local Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/robotics-intelligent-systems/jfxai4arch.git
-cd jfxai4arch
-```
-
-Create the environment:
-
-```bash
-cp .env.example .env
-```
-
-Configure:
+## Coding-Agent Profile
 
 ```text
-DATABASE_URL
-QDRANT_URL
-AZURE_AI_ENDPOINT
-AZURE_AI_API_KEY
-MODEL_PROVIDER
-MCP_SERVER_URL
+Developer Portal / API
+        |
+   HarnessRouter
+        |
+      Codex
+        |
+Local Workspace
+Git + Bash + Files
 ```
 
-Start the infrastructure:
-
-```bash
-docker compose up -d
-```
-
-Check services:
-
-```bash
-docker compose ps
-```
-
-View logs:
-
-```bash
-docker compose logs -f
-```
-
----
-
-# Testing
-
-Recommended validation levels:
-
-## Unit Tests
-
-```bash
-pytest
-```
-
-## API Tests
-
-```bash
-pytest tests/api
-```
-
-## Agent Tests
-
-Validate:
-
-- state transitions
-- tool execution
-- retry behavior
-- human approval
-- model routing
-
-## RAG Tests
-
-Evaluate:
-
-- retrieval precision
-- retrieval recall
-- grounding
-- hallucination rate
-- answer relevance
-
-## MCP Tests
-
-Validate:
-
-- authentication
-- authorization
-- tool discovery
-- tool execution
-- failure handling
-
-## Infrastructure Tests
-
-Validate:
-
-- Docker images
-- Kubernetes manifests
-- Helm charts
-- readiness probes
-- liveness probes
-- autoscaling
-
----
-
-# Docker Architecture
-
-The recommended container organization is:
+## Microsoft Enterprise Profile
 
 ```text
-ai-platform/
-│
-├── open-webui/
-│
-├── agent-api/
-│   ├── FastAPI/
-│   ├── LangGraph/
-│   ├── MCP Clients/
-│   └── Model Router/
-│
-├── mcp-servers/
-│   ├── postgresql/
-│   ├── ecommerce/
-│   ├── erp/
-│   └── azure/
-│
-├── rag-service/
-│
-├── qdrant/
-│
-├── postgresql/
-│
-├── observability/
-│   ├── langfuse/
-│   ├── prometheus/
-│   └── grafana/
-│
-├── docker-compose.yml
-│
-└── kubernetes/
-    ├── namespaces/
-    ├── deployments/
-    ├── services/
-    ├── ingress/
-    ├── secrets/
-    └── helm/
+Teams / M365 / Webchat
+         |
+Microsoft 365 Agents SDK
+         |
+      .NET Agent
+         |
+Azure AI / Semantic Kernel
+         |
+MCP + Enterprise APIs + RAG
 ```
 
-This organization follows the Docker architecture already proposed by the project.
-
----
-
-# Kubernetes and Cloud Deployment
-
-Production deployment can target Azure Kubernetes Service.
+## Full Hybrid Enterprise Profile
 
 ```text
-Azure Kubernetes Service
-│
-├── Open WebUI
-│
-├── Agent API
-│   ├── FastAPI
-│   └── LangGraph
-│
-├── MCP Servers
-│
-├── Model Router
-│
-├── Qdrant
-│
-├── PostgreSQL
-│
-├── Azure AI
-│
-├── Azure Key Vault
-│
-├── Azure Container Registry
-│
-└── Azure Monitor
-```
-
-The existing repository describes AKS as the production target and includes Azure AI, Key Vault, Container Registry and Azure Monitor in the deployment architecture.
-
----
-
-# Security and Privacy
-
-## Security Principles
-
-- Zero-trust service communication
-- Least privilege
-- RBAC
-- OAuth2/OIDC
-- Secret isolation
-- TLS
-- Network segmentation
-- Audit logging
-- Container scanning
-- Dependency scanning
-
-## AI Security
-
-Agents should not automatically execute high-risk operations.
-
-Recommended pattern:
-
-```text
-User
- │
- ▼
-Agent
- │
- ▼
-Risk Assessment
- │
- ├── Low Risk ───────► Automatic Execution
- │
- ├── Medium Risk ────► Additional Validation
- │
- └── High Risk ──────► Human Approval
+Open WebUI / M365 / Enterprise Apps
+               |
+          API Gateway
+               |
++--------------+----------------+
+|              |                |
+LangGraph   model-compose   .NET Agents SDK
+|              |                |
++--------------+----------------+
+               |
+       MCP / Tool Services
+               |
++--------------+----------------+
+|                               |
+HarnessRouter                Model Router
+Codex / harnesses            LiteLLM
+|                               |
+Local workspaces        Azure AI / Ollama / vLLM
+               |
+       Qdrant + PostgreSQL
+               |
+ Docker -> Kubernetes -> AKS
 ```
 
 ---
 
-# Observability
+# Dependency Classification
 
-AI workloads require observability beyond conventional application metrics.
+## Core / Recommended
 
-Recommended telemetry:
+- Open WebUI
+- LangGraph / LangChain
+- MCP
+- Qdrant
+- PostgreSQL
+- Docker
+- Kubernetes
 
-### Application
+## Optional Integrations
 
-- request latency
-- throughput
-- errors
-- availability
+- Azure AI / Azure AI Foundry
+- LiteLLM
+- Ollama
+- vLLM
+- Keycloak
+- Langfuse
+- Prometheus
+- Grafana
+- Argo CD
 
-### AI
+## New Optional Architecture Components
 
-- token consumption
-- model latency
-- inference cost
-- model selection
-- prompt/response traces
-- agent execution paths
+### model-compose
 
-### RAG
+**Category:** Alternative orchestration / declarative automation.
 
-- retrieval latency
-- top-k results
-- relevance
-- embedding latency
-- grounding quality
+Use when YAML-based portable service composition is preferable to application-code-centric orchestration.
 
-### Agents
+### HarnessRouter
 
-- workflow duration
-- tool execution
-- retries
-- failures
-- state transitions
+**Category:** Local agent-harness runtime/router.
 
-Recommended stack:
+Use when coding or tool-enabled agent runtimes should execute through a unified local/self-hosted abstraction.
 
-```text
-OpenTelemetry
-      │
-      ├── Metrics ──► Prometheus ──► Grafana
-      │
-      ├── Traces ──► Langfuse
-      │
-      └── Logs ────► Central Logging
-```
+### Microsoft 365 Agents SDK for .NET
+
+**Category:** Enterprise agent SDK.
+
+Use for C#/.NET, Microsoft 365, Teams, Copilot Studio and compatible multichannel agent applications.
 
 ---
 
-# Testing and Evaluation
+# Design Principles
 
-## Functional Testing
+1. **No mandatory orchestration framework**  
+   LangGraph is a strong default, while model-compose provides a declarative alternative.
 
-Validate:
+2. **Separate model routing from harness routing**  
+   Model gateways select inference endpoints; HarnessRouter manages tool-enabled agent harness execution.
 
-- API functionality
-- authentication
-- model invocation
-- RAG
-- MCP tools
-- agent workflows
+3. **Polyglot agent development**  
+   Python, declarative YAML and C#/.NET agent stacks can coexist.
 
-## AI Evaluation
+4. **Local-first where appropriate**  
+   Local models, local agent harnesses and self-hosted services can reduce external infrastructure dependencies.
 
-Measure:
+5. **Cloud when beneficial**  
+   Azure AI and AKS remain available for managed enterprise workloads.
 
-- answer correctness
-- groundedness
-- hallucination
-- relevance
-- latency
-- token consumption
-- cost
+6. **Open integrations**  
+   MCP and documented APIs reduce direct coupling between agents and business systems.
 
-## Security Evaluation
-
-Perform:
-
-- dependency scanning
-- SAST
-- container scanning
-- API security testing
-- authentication testing
-- authorization testing
-- prompt injection testing
-- tool abuse testing
+7. **Replaceable components**  
+   The architecture should remain modular enough to substitute models, runtimes, stores, gateways and orchestration systems.
 
 ---
 
-# Repository Structure
-
-Recommended repository structure:
-
-```text
-jfxai4arch/
-│
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CODE-OF-CONDUCT.md
-│
-├── docs/
-│   ├── architecture/
-│   ├── deployment/
-│   ├── security/
-│   ├── rag/
-│   ├── agents/
-│   ├── mcp/
-│   ├── observability/
-│   └── dependencies/
-│       ├── software-compendium.md
-│       └── dependency-matrix.csv
-│
-├── src/
-│   ├── api/
-│   ├── agents/
-│   ├── mcp/
-│   ├── rag/
-│   ├── models/
-│   ├── routing/
-│   └── security/
-│
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   ├── agents/
-│   ├── rag/
-│   └── security/
-│
-├── docker/
-│
-├── kubernetes/
-│   ├── namespaces/
-│   ├── deployments/
-│   ├── services/
-│   ├── ingress/
-│   └── secrets/
-│
-├── helm/
-│
-└── docker-compose.yml
-```
-
----
-
-# How to Contribute
-
-Contributions are welcome.
-
-Recommended workflow:
-
-```bash
-git checkout -b feature/my-feature
-```
-
-Implement the change.
-
-Run tests:
-
-```bash
-pytest
-```
-
-Run static analysis:
-
-```bash
-ruff check .
-```
-
-Commit:
-
-```bash
-git commit -m "feat: add new AI capability"
-```
-
-Push:
-
-```bash
-git push origin feature/my-feature
-```
-
-Then open a Pull Request.
-
-Contributions should include:
-
-- documentation
-- tests
-- architecture impact
-- security considerations
-- dependency changes
-- backward compatibility information
-
----
-
-# Code of Conduct
-
-All contributors should:
-
-- communicate respectfully
-- provide constructive feedback
-- avoid discrimination or harassment
-- document architectural decisions
-- respect software licenses
-- protect confidential information
-- follow responsible AI principles
-
-The repository should maintain a `CODE-OF-CONDUCT.md` file defining the complete community rules.
-
----
-
-# Authors
-
-**Robotics Intelligent Systems**
-
-GitHub organization:
-
-```text
-https://github.com/robotics-intelligent-systems
-```
-
-Project:
-
-```text
-https://github.com/robotics-intelligent-systems/jfxai4arch
-```
-
-Reference documentation template:
-
-```text
-https://github.com/sdk2035/Plantilla-de-repositorio
-```
-
----
-
-# Additional Information
-
-## Related Architecture Projects
-
-JFXAI4ARCH can be considered part of a broader AI/software engineering ecosystem.
-
-Potential complementary repositories include:
-
-- **JFXAI4NLP** — Natural Language Processing and language intelligence.
-- **JFXAI4MAD** — AI-powered social/matchmaking applications.
-- **JFXENGINE** — Engineering, MBSE and digital-twin architecture.
-
-The three domains can share:
-
-```text
-                JFXAI4ARCH
-              AI Platform Core
-                     │
-       ┌─────────────┼─────────────┐
-       │             │             │
-       ▼             ▼             ▼
-   JFXAI4NLP     JFXAI4MAD     JFXENGINE
-   Language      Social AI     Engineering
-   Intelligence  Intelligence  Intelligence
-```
-
----
-
-# Architecture Governance
-
-Architectural changes should be documented through Architecture Decision Records (ADRs).
-
-Recommended structure:
-
-```text
-docs/
-└── architecture/
-    └── adr/
-        ├── ADR-001-agent-orchestration.md
-        ├── ADR-002-model-routing.md
-        ├── ADR-003-vector-database.md
-        ├── ADR-004-mcp-integration.md
-        ├── ADR-005-identity-management.md
-        └── ADR-006-kubernetes-deployment.md
-```
-
-Each ADR should document:
-
-- Context
-- Decision
-- Alternatives
-- Consequences
-- Security implications
-- Operational implications
-
----
-
-# Responsible AI
-
-The platform should implement responsible AI controls for:
-
-- transparency
-- traceability
-- human oversight
-- data minimization
-- privacy
-- security
-- model evaluation
-- bias assessment
-- explainability where appropriate
-
-Agents should not be granted unrestricted access to enterprise systems.
-
----
-
-# Roadmap
-
-## Phase 1 — Foundation
-
-- [x] Open WebUI architecture
-- [x] LangGraph architecture
-- [x] MCP integration concept
-- [x] Qdrant RAG architecture
-- [x] PostgreSQL architecture
-- [x] Docker architecture
-
-## Phase 2 — AI Platform
-
-- [ ] Agent API implementation
-- [ ] Model router
-- [ ] MCP server catalog
-- [ ] RAG service
-- [ ] Authentication
-- [ ] Observability
-
-## Phase 3 — Cloud Native
-
-- [ ] Kubernetes manifests
-- [ ] Helm charts
-- [ ] AKS deployment
-- [ ] GitHub Actions
-- [ ] Argo CD
-- [ ] Azure Key Vault integration
-
-## Phase 4 — Enterprise AI
-
-- [ ] Multi-agent workflows
-- [ ] Enterprise ERP integration
-- [ ] E-commerce integration
-- [ ] Advanced RAG
-- [ ] AI governance
-- [ ] Model evaluation platform
-
-## Phase 5 — Sovereign / Hybrid AI
-
-- [ ] Local GPU inference
-- [ ] vLLM production cluster
-- [ ] Model quantization
-- [ ] Offline deployment
-- [ ] Private AI infrastructure
-- [ ] Air-gapped deployment
-
----
-
-# Key Benefits
-
-JFXAI4ARCH provides:
-
-- Open-source architecture
-- Self-hosted AI
-- Hybrid cloud/local inference
-- Replaceable AI components
-- Enterprise agent orchestration
-- Standardized MCP integrations
-- RAG with Qdrant
-- Transactional persistence with PostgreSQL
-- Docker-based deployment
-- Kubernetes scalability
-- Azure integration
-- AI observability
-- Improved infrastructure control
-- Flexible model routing
-
-These benefits are consistent with the project's current architecture and stated goals.
-
----
-
-# License
-
-The license of the implementation must be explicitly defined in the repository's `LICENSE` file.
-
-All third-party dependencies must be reviewed individually for:
-
-- license compatibility
-- redistribution requirements
-- attribution requirements
-- model-specific terms
-- commercial-use restrictions
-- deployment restrictions
-
-> **Important:** The dependency compendium should not assume that every component listed in the architecture has the same license. Each dependency must be verified against its authoritative project documentation before release.
-
----
-
-# Dependency Governance
-
-For every production dependency, maintain:
-
-```text
-Name
-Version
-License
-Repository
-Official Documentation
-Purpose
-Runtime Requirements
-Build Requirements
-Security Status
-Known CVEs
-Container Support
-Kubernetes Support
-Last Review
-Replacement Candidate
-```
-
-A recommended file is:
-
-```text
-docs/dependencies/software-compendium.md
-```
-
-and a machine-readable matrix:
-
-```text
-docs/dependencies/dependency-matrix.csv
-```
+# Updated Benefits
+
+- Open-source-oriented and self-hosted architecture.
+- Hybrid Azure and local AI.
+- Declarative YAML automation through model-compose.
+- Local/self-hosted coding-agent execution through HarnessRouter.
+- Codex-compatible agent-harness architecture.
+- C#/.NET and Microsoft 365 enterprise agents through the Microsoft 365 Agents SDK.
+- Stateful orchestration through LangGraph.
+- Standardized integrations through MCP.
+- Scalable RAG through Qdrant.
+- Transactional and workflow state through PostgreSQL.
+- Containerized deployment through Docker and Kubernetes.
+- Production deployment path through AKS.
+- Improved portability and infrastructure control.
+- Multiple implementation paths instead of a single framework dependency.
 
 ---
 
 # Conclusion
 
-JFXAI4ARCH defines a modular architecture for building enterprise AI systems without coupling the entire platform to a single model provider or proprietary application stack.
+The updated `jfxai4arch` architecture extends the existing open-source AI platform with three complementary capabilities:
 
-The combination of:
+1. **model-compose** adds a declarative `model-compose.yml` path for agents, workflows, RAG pipelines, tools and MCP services.
+2. **HarnessRouter** adds a local/self-hosted abstraction for tool-enabled coding-agent harnesses such as Codex.
+3. **Microsoft 365 Agents SDK for .NET** adds a C#/.NET enterprise-agent path for Microsoft 365, Teams, Copilot Studio, Webchat and related integrations.
 
-```text
-Open WebUI
-      +
-FastAPI
-      +
-LangGraph
-      +
-MCP
-      +
-Azure AI / Local LLMs
-      +
-Qdrant
-      +
-PostgreSQL
-      +
-Docker
-      +
-Kubernetes
-```
+Together with Open WebUI, LangGraph, MCP, Azure AI, local LLMs, Qdrant, PostgreSQL, Docker and Kubernetes, these components provide a broader architecture in which workflow orchestration, coding-agent runtimes, model providers and enterprise agent SDKs remain independently replaceable.
 
-provides a reusable foundation for:
+> **Open, modular architecture designed to minimize proprietary lock-in and enable independent implementations.**
 
-- enterprise AI assistants
-- RAG systems
-- multi-agent platforms
-- business automation
-- ERP integrations
-- e-commerce integrations
-- AI-powered developer tools
-- knowledge management
-- hybrid Azure/on-premises AI
-- private and sovereign AI deployments
+## Intellectual Property and Integration Note
 
-The architecture therefore functions not only as an individual repository but also as a **reference platform for integrating language intelligence, enterprise automation, agentic AI and domain-specific AI applications**.
+The repositories referenced above remain independent projects and retain their respective licenses, trademarks and upstream ownership. Inclusion in this architecture is a proposed integration/dependency classification and does not imply endorsement, sponsorship, ownership or automatic license compatibility.
 
----
-
-## Reference Sources
-
-- JFXAI4ARCH repository: https://github.com/robotics-intelligent-systems/jfxai4arch
-- Repository documentation template: https://github.com/sdk2035/Plantilla-de-repositorio
-- Robotics Intelligent Systems organization: https://github.com/robotics-intelligent-systems
+Open-source software does not by itself guarantee freedom from third-party patent or other intellectual-property rights; deployments should perform their own technical and legal review.
