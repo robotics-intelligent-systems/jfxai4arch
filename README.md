@@ -1,6 +1,3 @@
-# jfxai4arch — Open-Source Agent-Powered Cloud Platform Architecture
-
-> Modular, self-hosted and hybrid AI platform architecture combining enterprise AI, local models, agent workflows, MCP integrations, declarative YAML automation, local agent-harness routing, Microsoft 365/.NET agents, RAG, observability and cloud-native deployment.
 
 <p align="center">
   <img src="open-source-ai-architecture.jpg"
@@ -11,6 +8,10 @@
 <p align="center">
   <em>Open-source, modular and self-hosted AI platform architecture for enterprise agents, RAG, MCP integrations, hybrid cloud/local inference and cloud-native deployment.</em>
 </p>
+
+# Open-Source Agent-Powered Cloud Platform Architecture
+
+> Modular, self-hosted and hybrid AI platform architecture combining enterprise AI, local models, agent workflows, MCP integrations, declarative YAML automation, local agent-harness routing, Microsoft 365/.NET agents, RAG, observability and cloud-native deployment.
 
 ## Overview
 
