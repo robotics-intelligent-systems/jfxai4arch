@@ -1,0 +1,980 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="app.diagrams.net" agent="JFXAI4ARCH architecture proposal" type="device" compressed="false">
+  <diagram id="p1" name="01 Architecture">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p1_001" vertex="1" parent="1" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=#142B43;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1800" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_002" vertex="1" parent="1" value="JFXAI4ARCH + GLiNER2 · private technical knowledge" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=34;fontStyle=1;fontColor=#FFFFFF;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="24" width="1640" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_003" vertex="1" parent="1" value="Preserve the AI platform; expand local document intelligence, technical bibliography and evidence-based RAG" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#D3E3F2;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="78" width="1670" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_004" vertex="1" parent="1" value="REFERENCE ARCHITECTURE | Proposed integration, not deployed software | 12 September 2026" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=15;fontStyle=0;fontColor=#64748B;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="1146" width="1560" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_005" vertex="1" parent="1" value="01 / 07" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="1640" y="1146" width="110" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_006" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="165" width="480" height="205" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_007" vertex="1" parent="p1_006" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_008" vertex="1" parent="p1_006" value="Governed knowledge workspace" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_009" vertex="1" parent="p1_006" value="Open WebUI or an approved client&#10;Technical search and source viewer&#10;Bibliography and annotation review&#10;One authorized retrieval path" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="129" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_010" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="165" width="480" height="205" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_011" vertex="1" parent="p1_010" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_012" vertex="1" parent="p1_010" value="FastAPI + LangGraph workflows" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_013" vertex="1" parent="p1_010" value="Identity, document ACLs and audit&#10;Ingestion and question workflows&#10;Human review and restricted MCP tools&#10;No independent UI index bypass" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="129" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_014" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="165" width="480" height="205" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_015" vertex="1" parent="p1_014" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_016" vertex="1" parent="p1_014" value="Local evidence retrieval" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_017" vertex="1" parent="p1_014" value="Authorized lexical + dense retrieval&#10;Optional local reranking&#10;Version-aware evidence assembly&#10;Exact identifiers and source context" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="129" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_018" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="455" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_019" vertex="1" parent="p1_018" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_020" vertex="1" parent="p1_018" value="Local document processing" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_021" vertex="1" parent="p1_018" value="Technical PDFs, reports and manuals&#10;Docling/OCR candidate for layout&#10;GROBID candidate for scholarly references&#10;Canonical text with page/location maps" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_022" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="455" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_023" vertex="1" parent="p1_022" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_024" vertex="1" parent="p1_022" value="GLiNER2 extraction subsystem" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_025" vertex="1" parent="p1_022" value="Entities, labels, records and relations&#10;Requested fork + approved checkpoint&#10;Long-document windows and exact offsets&#10;Annotations remain evidence candidates" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_026" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="455" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_027" vertex="1" parent="p1_026" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_028" vertex="1" parent="p1_026" value="Knowledge and evidence stores" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_029" vertex="1" parent="p1_026" value="PostgreSQL: metadata, ACLs, bibliography&#10;Qdrant: derived vector collections&#10;Immutable originals and parse artifacts&#10;Versioned lexical / vector publication" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_030" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="765" width="1090" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_031" vertex="1" parent="p1_030" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1090" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_032" vertex="1" parent="p1_030" value="Retained JFXAI4ARCH layers and replaceable components" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="1054" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_033" vertex="1" parent="p1_030" value="Local model gateway: inherited gpt-oss candidates or evaluated alternatives&#10;MCP integration, LangGraph/LangChain adapters and private identity&#10;Local telemetry, containers and optional private Kubernetes&#10;Original hybrid/cloud profiles remain separate; strict on-premise routes stay private." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="1054" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_034" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="765" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_035" vertex="1" parent="p1_034" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_036" vertex="1" parent="p1_034" value="Local generation and citations" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_037" vertex="1" parent="p1_034" value="Separate LLM behind the model gateway&#10;Answer only from authorized evidence&#10;Check claim support and citation locators&#10;Show insufficient evidence explicitly" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_038" edge="1" parent="1" source="p1_006" target="p1_010" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_039" edge="1" parent="1" source="p1_010" target="p1_014" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_040" edge="1" parent="1" source="p1_018" target="p1_022" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_041" edge="1" parent="1" source="p1_022" target="p1_026" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_042" edge="1" parent="1" source="p1_026" target="p1_014" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_043" edge="1" parent="1" source="p1_014" target="p1_034" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#7954AC;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1780" y="267.5"/>
+              <mxPoint x="1780" y="872.5"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1_044" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="1030" width="1700" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_045" vertex="1" parent="p1_044" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1700" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_046" vertex="1" parent="p1_044" value="Separate model roles and authority" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="1664" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_047" vertex="1" parent="p1_044" value="Parser/OCR → GLiNER2 extraction → independent embeddings/retrieval → local LLM. Bibliographic records do not prove source consultation." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=17;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="1664" height="24" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p2" name="02 Evolution and MVP">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p2_001" vertex="1" parent="1" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=#142B43;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1800" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_002" vertex="1" parent="1" value="From the existing platform to a qualified local RAG deployment" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=34;fontStyle=1;fontColor=#FFFFFF;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="24" width="1640" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_003" vertex="1" parent="1" value="Simplified evolution / MVP | Each stage produces reviewable evidence before the next expansion" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#D3E3F2;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="78" width="1670" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_004" vertex="1" parent="1" value="REFERENCE ARCHITECTURE | Proposed integration, not deployed software | 12 September 2026" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=15;fontStyle=0;fontColor=#64748B;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="1146" width="1560" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_005" vertex="1" parent="1" value="02 / 07" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="1640" y="1146" width="110" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_006" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3F5F8;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="165" width="760" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_007" vertex="1" parent="p2_006" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#64748B;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="760" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_008" vertex="1" parent="p2_006" value="M0 · Baseline and artifact preparation" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="724" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_009" vertex="1" parent="p2_006" value="Keep the JFXAI4ARCH layers and pin the requested fork.&#10;Select checkpoints, corpus rights and complete local artifacts.&#10;Gate: repeatable extraction fixture with source provenance." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="724" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_010" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="990" y="165" width="760" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_011" vertex="1" parent="p2_010" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="760" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_012" vertex="1" parent="p2_010" value="M1 · Local evidence retrieval" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="724" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_013" vertex="1" parent="p2_010" value="Canonical parsing, source viewer and metadata registry.&#10;PostgreSQL lexical + Qdrant dense search with one ACL policy.&#10;Gate: correct locators and consistent index publication." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="724" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_014" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="990" y="445" width="760" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_015" vertex="1" parent="p2_014" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="760" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_016" vertex="1" parent="p2_014" value="M2 · GLiNER2 enrichment" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="724" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_017" vertex="1" parent="p2_014" value="Technical schemas, complete scans and annotation review.&#10;Evaluate Spanish/English and exact technical identifiers.&#10;Gate: compare with plain hybrid RAG on the same corpus." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="724" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_018" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="445" width="760" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_019" vertex="1" parent="p2_018" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="760" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_020" vertex="1" parent="p2_018" value="M3 · Cited answers and bibliography" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="724" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_021" vertex="1" parent="p2_018" value="Local generation, claim support and citation checks.&#10;Curated work/edition records and deterministic exports.&#10;Gate: unanswerable and reference-only cases handled correctly." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="724" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_022" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FCEFF0;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="725" width="760" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_023" vertex="1" parent="p2_022" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B44B58;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="760" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_024" vertex="1" parent="p2_022" value="M4 · On-premise team operation" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="724" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_025" vertex="1" parent="p2_022" value="Internal identity, private services, backups and telemetry.&#10;Offline packaging, revocation and controlled updates.&#10;Gate: cold start, denied-egress, load and restore tests." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="724" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_026" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="990" y="725" width="760" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_027" vertex="1" parent="p2_026" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="760" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_028" vertex="1" parent="p2_026" value="M5 · Optional adaptation and scale" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="724" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_029" vertex="1" parent="p2_026" value="Local fine-tuning, reranking, graph traversal or MCP tools.&#10;Promote versioned model/index releases with rollback.&#10;Gate: demonstrated quality benefit and operational acceptance." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="724" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_030" edge="1" parent="1" source="p2_006" target="p2_010" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_031" edge="1" parent="1" source="p2_010" target="p2_014" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_032" edge="1" parent="1" source="p2_014" target="p2_018" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_033" edge="1" parent="1" source="p2_018" target="p2_022" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_034" edge="1" parent="1" source="p2_022" target="p2_026" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_035" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="1000" width="1700" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_036" vertex="1" parent="p2_035" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1700" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_037" vertex="1" parent="p2_035" value="Start with one working evidence path" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="1664" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_038" vertex="1" parent="p2_035" value="A workstation can combine logical services. Add Kubernetes, fine-tuning or a graph store only when measured requirements justify them." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="1664" height="34" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p3" name="03 Ingestion">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p3_001" vertex="1" parent="1" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=#142B43;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1800" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_002" vertex="1" parent="1" value="Every annotation and index leads back to an immutable document version" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=34;fontStyle=1;fontColor=#FFFFFF;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="24" width="1640" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_003" vertex="1" parent="1" value="Technical documents + bibliography | Extraction windows and retrieval chunks have different purposes" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#D3E3F2;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="78" width="1670" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_004" vertex="1" parent="1" value="REFERENCE ARCHITECTURE | Proposed integration, not deployed software | 12 September 2026" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=15;fontStyle=0;fontColor=#64748B;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="1146" width="1560" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_005" vertex="1" parent="1" value="03 / 07" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="1640" y="1146" width="110" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_006" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="165" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_007" vertex="1" parent="p3_006" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_008" vertex="1" parent="p3_006" value="Register and quarantine" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_009" vertex="1" parent="p3_006" value="PDF, DOCX, Markdown, HTML and text&#10;BibTeX / RIS / CSL-JSON imports&#10;Hash originals; record rights and ACLs&#10;File/resource limits and parser isolation" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_010" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="165" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_011" vertex="1" parent="p3_010" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_012" vertex="1" parent="p3_010" value="Parse and inspect quality" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_013" vertex="1" parent="p3_010" value="Local layout, OCR and scholarly parsers&#10;Preserve tables, headings and code&#10;Select one canonical text revision&#10;Keep alternative parser evidence separate" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_014" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="165" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_015" vertex="1" parent="p3_014" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_016" vertex="1" parent="p3_014" value="Canonical text + location map" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_017" vertex="1" parent="p3_014" value="Document/text version and content hashes&#10;PDF page index + printed page label&#10;Block ranges, geometry and normalization&#10;Unknown OCR/layout quality stays flagged" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_018" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="470" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_019" vertex="1" parent="p3_018" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_020" vertex="1" parent="p3_018" value="GLiNER2 long-document scan" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_021" vertex="1" parent="p3_018" value="Versioned schema and checkpoint&#10;Overlapping extraction windows&#10;Global half-open source-text offsets&#10;Check coverage, duplicates and alignment" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_022" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="470" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_023" vertex="1" parent="p3_022" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_024" vertex="1" parent="p3_022" value="Validate and review evidence" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_025" vertex="1" parent="p3_022" value="Technical mentions and relation candidates&#10;Raw reference text + local work matching&#10;Units, identifiers and edition conflicts&#10;Unresolved metadata remains unresolved" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_026" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="470" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_027" vertex="1" parent="p3_026" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_028" vertex="1" parent="p3_026" value="Build retrieval projections" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_029" vertex="1" parent="p3_026" value="Section-aware retrieval chunks&#10;Local embeddings and lexical entries&#10;ACL, source version and evidence IDs&#10;Do not merge access scopes on deduplication" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_030" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="785" width="480" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_031" vertex="1" parent="p3_030" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_032" vertex="1" parent="p3_030" value="Publish an index generation" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_033" vertex="1" parent="p3_030" value="Compatible lexical and vector projections&#10;Manifest, ACL revision and corpus versions&#10;Partial or failed jobs are not silently live" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="119" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_034" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="785" width="480" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_035" vertex="1" parent="p3_034" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_036" vertex="1" parent="p3_034" value="Serve governed evidence" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_037" vertex="1" parent="p3_034" value="Retrieval, source viewing and bibliography&#10;Immutable evidence citations&#10;Idempotent reprocessing and provenance" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="119" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_038" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="785" width="480" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_039" vertex="1" parent="p3_038" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_040" vertex="1" parent="p3_038" value="Review / reprocess queue" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_041" vertex="1" parent="p3_038" value="OCR failures, uncertain spans or bad input&#10;Human correction creates a new revision&#10;Original documents remain unchanged" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="119" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_042" edge="1" parent="1" source="p3_006" target="p3_010" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_043" edge="1" parent="1" source="p3_010" target="p3_014" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_044" edge="1" parent="1" source="p3_014" target="p3_018" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_045" edge="1" parent="1" source="p3_018" target="p3_022" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_046" edge="1" parent="1" source="p3_022" target="p3_026" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_047" edge="1" parent="1" source="p3_026" target="p3_030" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_048" edge="1" parent="1" source="p3_030" target="p3_034" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_049" edge="1" parent="1" source="p3_018" target="p3_038" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_050" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FCEFF0;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="1020" width="1700" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_051" vertex="1" parent="p3_050" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B44B58;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1700" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_052" vertex="1" parent="p3_050" value="Long-document processing still has window limits" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="1664" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3_053" vertex="1" parent="p3_050" value="A short extraction call can truncate the file. Overlap cannot recover a mention or relation whose required endpoints never share a window." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="1664" height="24" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p4" name="04 Retrieval and citations">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p4_001" vertex="1" parent="1" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=#142B43;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1800" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_002" vertex="1" parent="1" value="Retrieve authorized passages, then generate and check a cited answer" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=34;fontStyle=1;fontColor=#FFFFFF;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="24" width="1640" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_003" vertex="1" parent="1" value="Strict on-premise query path | GLiNER2 adds candidate query/entity signals; baseline hybrid retrieval remains available" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#D3E3F2;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="78" width="1670" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_004" vertex="1" parent="1" value="REFERENCE ARCHITECTURE | Proposed integration, not deployed software | 12 September 2026" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=15;fontStyle=0;fontColor=#64748B;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="1146" width="1560" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_005" vertex="1" parent="1" value="04 / 07" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="1640" y="1146" width="110" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_006" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="165" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_007" vertex="1" parent="p4_006" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_008" vertex="1" parent="p4_006" value="Question and scope" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_009" vertex="1" parent="p4_006" value="Keep the original user question&#10;Normalize language and exact identifiers&#10;Optional local GLiNER2 query analysis&#10;Select corpus version and document edition" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_010" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FCEFF0;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="165" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_011" vertex="1" parent="p4_010" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B44B58;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_012" vertex="1" parent="p4_010" value="Trusted authorization gate" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_013" vertex="1" parent="p4_010" value="Identity → tenant, projects and groups&#10;Current document and ACL revisions&#10;Apply policy inside both retrieval branches&#10;Model output never grants permission" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_014" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="165" width="480" height="215" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_015" vertex="1" parent="p4_014" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_016" vertex="1" parent="p4_014" value="Hybrid candidate retrieval" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_017" vertex="1" parent="p4_014" value="PostgreSQL: lexical / exact identifiers&#10;Qdrant: dense semantic similarity&#10;Version/ACL filters before content leaves&#10;Do not make uncertain tags hard filters" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="139" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_018" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="470" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_019" vertex="1" parent="p4_018" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_020" vertex="1" parent="p4_018" value="Fuse and optionally rerank" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_021" vertex="1" parent="p4_018" value="Merge ranked lists; remove duplicate chunks&#10;Local reranker sees authorized passages&#10;Keep source scores and query provenance&#10;Graph expansion obeys the same ACLs" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_022" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="470" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_023" vertex="1" parent="p4_022" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_024" vertex="1" parent="p4_022" value="Assemble evidence context" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_025" vertex="1" parent="p4_022" value="Passages, tables, headings and conditions&#10;Source versions and citation IDs&#10;Token budget and final authorization check&#10;Separate source text from agent instructions" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_026" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="470" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_027" vertex="1" parent="p4_026" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_028" vertex="1" parent="p4_026" value="Generate with a local LLM" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_029" vertex="1" parent="p4_026" value="Approved private model gateway&#10;Evidence-based response with limitations&#10;No automatic cloud fallback&#10;Retrieval-only mode if generation is down" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_030" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="785" width="480" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_031" vertex="1" parent="p4_030" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_032" vertex="1" parent="p4_030" value="Check support and citations" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_033" vertex="1" parent="p4_030" value="Reject nonexistent evidence/source IDs&#10;Verify locators; assess claim support&#10;Abstain or expose insufficient evidence" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="119" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_034" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="785" width="480" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_035" vertex="1" parent="p4_034" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_036" vertex="1" parent="p4_034" value="Answer + source viewer" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_037" vertex="1" parent="p4_034" value="Page / section / edition locators&#10;Consulted passages and contradictions&#10;Bibliography export from curated records" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="119" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_038" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3F5F8;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="785" width="480" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_039" vertex="1" parent="p4_038" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#64748B;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_040" vertex="1" parent="p4_038" value="Caches and traces" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_041" vertex="1" parent="p4_038" value="Scope keys by authorization and corpus&#10;Invalidate on withdrawal / ACL changes&#10;Sensitive text tracing is separately governed" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="119" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_042" edge="1" parent="1" source="p4_006" target="p4_010" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_043" edge="1" parent="1" source="p4_010" target="p4_014" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_044" edge="1" parent="1" source="p4_014" target="p4_018" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_045" edge="1" parent="1" source="p4_018" target="p4_022" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_046" edge="1" parent="1" source="p4_022" target="p4_026" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_047" edge="1" parent="1" source="p4_026" target="p4_030" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_048" edge="1" parent="1" source="p4_030" target="p4_034" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_049" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="1020" width="1700" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_050" vertex="1" parent="p4_049" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1700" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_051" vertex="1" parent="p4_049" value="Citation existence and claim support are different checks" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="1664" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4_052" vertex="1" parent="p4_049" value="A valid document ID, bibliographic record or URL does not prove that the cited passage supports the answer." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="1664" height="24" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p5" name="05 On-premise deployment">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p5_001" vertex="1" parent="1" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=#142B43;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1800" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_002" vertex="1" parent="1" value="Prepare artifacts once; operate inside a controlled private boundary" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=34;fontStyle=1;fontColor=#FFFFFF;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="24" width="1640" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_003" vertex="1" parent="1" value="Connected acquisition is separate from runtime | Local flags complement enforced network isolation" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#D3E3F2;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="78" width="1670" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_004" vertex="1" parent="1" value="REFERENCE ARCHITECTURE | Proposed integration, not deployed software | 12 September 2026" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=15;fontStyle=0;fontColor=#64748B;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="1146" width="1560" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_005" vertex="1" parent="1" value="05 / 07" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="1640" y="1146" width="110" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_006" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3F5F8;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="165" width="480" height="235" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_007" vertex="1" parent="p5_006" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#64748B;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_008" vertex="1" parent="p5_006" value="CONNECTED · acquire and pin" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_009" vertex="1" parent="p5_006" value="Requested fork commit + dependency lock&#10;Checkpoint, tokenizer and encoder assets&#10;OCR packs, embeddings and generator&#10;Licenses and corpus access rights" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="159" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_010" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="165" width="480" height="235" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_011" vertex="1" parent="p5_010" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_012" vertex="1" parent="p5_010" value="CONNECTED · build and qualify" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_013" vertex="1" parent="p5_010" value="Test a complete platform-specific bundle&#10;Wheelhouse and container image digests&#10;Source/model hashes and test reports&#10;No production document upload implied" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="159" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_014" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FCEFF0;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="165" width="480" height="235" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_015" vertex="1" parent="p5_014" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B44B58;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_016" vertex="1" parent="p5_014" value="CONTROLLED · artifact import" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_017" vertex="1" parent="p5_014" value="Approved transfer into private registries&#10;Verify bundle integrity and provenance&#10;Versioned configuration and release record&#10;No runtime public-registry dependency" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="159" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_018" edge="1" parent="1" source="p5_006" target="p5_010" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_019" edge="1" parent="1" source="p5_010" target="p5_014" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_020" vertex="1" parent="1" value="PRIVATE RUNTIME · public egress denied; internal identity, storage and telemetry remain available" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=20;fontStyle=1;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="467" width="1660" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_021" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="540" width="480" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_022" vertex="1" parent="p5_021" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_023" vertex="1" parent="p5_021" value="Private clients and API" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_024" vertex="1" parent="p5_021" value="Open WebUI / source viewer / bibliography&#10;FastAPI + LangGraph + restricted MCP&#10;Local identity, TLS, quotas and policies&#10;One governed knowledge access path" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="169" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_025" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="540" width="480" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_026" vertex="1" parent="p5_025" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_027" vertex="1" parent="p5_025" value="Local workers and model gateway" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_028" vertex="1" parent="p5_025" value="Parser/OCR + GLiNER2 extraction&#10;Separate embedding and reranking models&#10;Approved local/private generator&#10;Hosted GLiNER2 API client is excluded&#10;Missing model artifacts produce errors" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="169" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_029" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="540" width="480" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_030" vertex="1" parent="p5_029" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_031" vertex="1" parent="p5_029" value="Private data and artifact services" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_032" vertex="1" parent="p5_029" value="PostgreSQL and Qdrant&#10;Originals, parsed evidence and indexes&#10;Complete approved model directories&#10;Private image registry and wheelhouse&#10;ACLs, hashes and manifest versions" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="169" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_033" edge="1" parent="1" source="p5_021" target="p5_025" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_034" edge="1" parent="1" source="p5_025" target="p5_029" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_035" edge="1" parent="1" source="p5_014" target="p5_029" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_036" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="855" width="820" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_037" vertex="1" parent="p5_036" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="820" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_038" vertex="1" parent="p5_036" value="Workstation → team server → private datacenter" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="784" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_039" vertex="1" parent="p5_036" value="Start with a small corpus and bounded worker concurrency.&#10;Scale CPU parsing/extraction separately from generation.&#10;Use private Kubernetes only when operational needs justify it.&#10;Inherited cloud/Entra/M365 profiles remain optional and separate.&#10;No hardware minimum or performance guarantee is asserted." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="784" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_040" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="930" y="855" width="820" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_041" vertex="1" parent="p5_040" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="820" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_042" vertex="1" parent="p5_040" value="Offline acceptance and operations" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="784" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5_043" vertex="1" parent="p5_040" value="Cold start and process fixtures with public egress blocked.&#10;Disable hosted extraction/OCR, remote tracing and consolidation.&#10;Monitor internal service health without logging private text by default.&#10;Restore matching data/index manifests; replay revocations.&#10;Prepare controlled updates and tested rollback." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="784" height="164" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p6" name="06 Evidence and bibliography">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p6_001" vertex="1" parent="1" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=#142B43;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1800" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_002" vertex="1" parent="1" value="Bibliographic identity, source availability and consultation stay distinct" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=34;fontStyle=1;fontColor=#FFFFFF;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="24" width="1640" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_003" vertex="1" parent="1" value="An evidence graph with provenance | Original bytes and canonical text are the source of stable locators" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#D3E3F2;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="78" width="1670" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_004" vertex="1" parent="1" value="REFERENCE ARCHITECTURE | Proposed integration, not deployed software | 12 September 2026" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=15;fontStyle=0;fontColor=#64748B;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="1146" width="1560" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_005" vertex="1" parent="1" value="06 / 07" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="1640" y="1146" width="110" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_006" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="165" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_007" vertex="1" parent="p6_006" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_008" vertex="1" parent="p6_006" value="DocumentVersion" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_009" vertex="1" parent="p6_006" value="Immutable original hash and media type&#10;Source, rights, ACL and edition/revision&#10;One work may have multiple manifestations&#10;Deduplication does not merge permissions" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_010" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="165" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_011" vertex="1" parent="p6_010" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_012" vertex="1" parent="p6_010" value="TextRevision + location mapping" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_013" vertex="1" parent="p6_010" value="Parser, OCR and normalization versions&#10;Blocks, canonical text hash and quality&#10;Page index / printed label / geometry&#10;Offset authority is canonical source text" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_014" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="165" width="480" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_015" vertex="1" parent="p6_014" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_016" vertex="1" parent="p6_014" value="Mention / Chunk / Evidence" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_017" vertex="1" parent="p6_014" value="Exact half-open text spans and locators&#10;Model/checkpoint/schema and review state&#10;Retrieval chunk and index generation&#10;Candidate relations retain their evidence" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="144" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_018" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="485" width="480" height="225" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_019" vertex="1" parent="p6_018" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_020" vertex="1" parent="p6_018" value="BibliographicWork / edition" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_021" vertex="1" parent="p6_018" value="Curated title, authors, date and identifiers&#10;Imported fields and resolution provenance&#10;Edition, preprint and translation distinctions&#10;Export through deterministic serializers" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="149" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_022" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="660" y="485" width="480" height="225" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_023" vertex="1" parent="p6_022" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_024" vertex="1" parent="p6_022" value="ReferenceMention" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_025" vertex="1" parent="p6_022" value="Raw reference string and citation callouts&#10;Citing document/text revision&#10;Candidate local work match&#10;Unresolved or ambiguous → review&#10;No automatic external DOI/PDF fetching" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="149" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_026" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1270" y="485" width="480" height="225" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_027" vertex="1" parent="p6_026" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="480" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_028" vertex="1" parent="p6_026" value="EvidenceCitation" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="444" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_029" vertex="1" parent="p6_026" value="Answer claim + consulted passage ID&#10;Document version, locator and excerpt hash&#10;Authorization and retrieval provenance&#10;Check support separately from ID validity&#10;Show source conflicts and missing evidence" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="444" height="149" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_030" edge="1" parent="1" source="p6_006" target="p6_010" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_031" edge="1" parent="1" source="p6_010" target="p6_014" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_032" edge="1" parent="1" source="p6_010" target="p6_022" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_033" edge="1" parent="1" source="p6_022" target="p6_018" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_034" edge="1" parent="1" source="p6_014" target="p6_026" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=0;strokeColor=#62768C;strokeWidth=2;endArrow=block;endFill=1;endSize=9;dashed=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_035" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="820" width="820" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_036" vertex="1" parent="p6_035" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="820" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_037" vertex="1" parent="p6_035" value="Availability and metadata status" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="784" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_038" vertex="1" parent="p6_035" value="reference_only: discovery or bibliography candidate&#10;abstract_available: claims limited to the available abstract&#10;full_text_available: authorized text has been indexed&#10;metadata_reviewed: fields accepted by a reviewer/catalog&#10;Publication/edition status carries its last review or sync date." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="784" height="179" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_039" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FCEFF0;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="930" y="820" width="820" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_040" vertex="1" parent="p6_039" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B44B58;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="820" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_041" vertex="1" parent="p6_039" value="Consulted evidence in a specific answer" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="784" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6_042" vertex="1" parent="p6_039" value="A work in a reference list has not necessarily been read.&#10;A retrieved passage must actually support the answer.&#10;Citations point to the version supplied to generation.&#10;Unknown authors, dates or identifiers are never fabricated.&#10;Offline catalogs cannot guarantee current retraction status." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="784" height="179" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p7" name="07 Evaluation and sources">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p7_001" vertex="1" parent="1" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=#142B43;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1800" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_002" vertex="1" parent="1" value="Qualify the integration against source evidence and corpus-specific tests" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=34;fontStyle=1;fontColor=#FFFFFF;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="24" width="1640" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_003" vertex="1" parent="1" value="Seven native editable Draw.io views | Click the source cards for the reviewed GitHub revisions" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#D3E3F2;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="78" width="1670" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_004" vertex="1" parent="1" value="REFERENCE ARCHITECTURE | Proposed integration, not deployed software | 12 September 2026" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=15;fontStyle=0;fontColor=#64748B;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="50" y="1146" width="1560" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_005" vertex="1" parent="1" value="07 / 07" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="1640" y="1146" width="110" height="30" as="geometry"/>
+        </mxCell>
+        <UserObject id="p7_006" label="" link="https://github.com/robotics-intelligent-systems/jfxai4arch/blob/26f2fdb22d6a235799f2b03f2b4ae17ae99f1bc5/README.md">
+          <mxCell vertex="1" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EDF4FF;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+            <mxGeometry x="50" y="165" width="820" height="230" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <mxCell id="p7_007" vertex="1" parent="p7_006" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#366CC4;strokeColor=#366CC4;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="820" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_008" vertex="1" parent="p7_006" value="JFXAI4ARCH · retained architecture" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="784" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_009" vertex="1" parent="p7_006" value="Commit: 26f2fdb22d6a235799f2b03f2b4ae17ae99f1bc5&#10;AI portal, FastAPI, LangGraph/LangChain and MCP&#10;Local/private/hybrid inference, Qdrant and PostgreSQL&#10;Reference documents and diagrams; no platform runtime in the reviewed tree." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="784" height="154" as="geometry"/>
+        </mxCell>
+        <UserObject id="p7_010" label="" link="https://github.com/sdk2035/GLiNER2/blob/3c913c7369301133d3b7699252074c4303ada50e/README.md">
+          <mxCell vertex="1" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3EFFF;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+            <mxGeometry x="930" y="165" width="820" height="230" as="geometry"/>
+          </mxCell>
+        </UserObject>
+        <mxCell id="p7_011" vertex="1" parent="p7_010" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#7954AC;strokeColor=#7954AC;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="820" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_012" vertex="1" parent="p7_010" value="sdk2035/GLiNER2 · requested subsystem" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="784" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_013" vertex="1" parent="p7_010" value="Commit: 3c913c7369301133d3b7699252074c4303ada50e&#10;Fork of fastino-ai/GLiNER2; Python code and tests&#10;Apache-2.0 source license; model rights tracked separately&#10;Use AutoExtractor for checkpoint architecture dispatch." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=18;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="784" height="154" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_014" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#EAF7F4;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="475" width="520" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_015" vertex="1" parent="p7_014" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#177F70;strokeColor=#177F70;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="520" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_016" vertex="1" parent="p7_014" value="Corpus and extraction quality" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="484" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_017" vertex="1" parent="p7_014" value="R01 original/derived provenance&#10;R02 complete scans and aligned spans&#10;R05 independent model roles&#10;R06 multilingual technical fidelity&#10;R13 measured value over baseline RAG" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="484" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_018" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FFF6E5;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="640" y="475" width="520" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_019" vertex="1" parent="p7_018" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B8791F;strokeColor=#B8791F;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="520" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_020" vertex="1" parent="p7_018" value="Evidence and access integrity" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="484" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_021" vertex="1" parent="p7_018" value="R03 authorization before retrieval&#10;R07 bibliography vs consulted content&#10;R08 citations, support and abstention&#10;R09 consistent index publication&#10;R11 restricted agents and tool behavior" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="484" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_022" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#FCEFF0;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="1230" y="475" width="520" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_023" vertex="1" parent="p7_022" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#B44B58;strokeColor=#B44B58;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="520" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_024" vertex="1" parent="p7_022" value="On-premise operational gates" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="484" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_025" vertex="1" parent="p7_022" value="R04 offline cold start and no egress&#10;R10 withdrawal/revocation propagation&#10;R12 reproducible local development&#10;R14 restore and release rollback&#10;Hardware/load targets require measurement" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="484" height="164" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_026" vertex="1" parent="1" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=0;fillColor=#F3F5F8;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="50" y="815" width="1700" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_027" vertex="1" parent="p7_026" value="" style="rounded=0;arcSize=6;whiteSpace=wrap;html=0;fillColor=#64748B;strokeColor=#64748B;strokeWidth=1.5;shadow=0;container=1;recursiveResize=0;">
+          <mxGeometry x="0" y="0" width="1700" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_028" vertex="1" parent="p7_026" value="What this package establishes" style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=22;fontStyle=1;fontColor=#142B43;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="19" width="1664" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7_029" vertex="1" parent="p7_026" value="A consolidated project description, subsystem boundaries, document/bibliography contracts and an incremental implementation plan.&#10;Compare plain hybrid RAG against GLiNER2-enriched RAG using the same frozen corpus, questions, generator and access policy.&#10;Repository code, model cards and synthetic smoke checks do not prove technical-domain extraction or answer quality.&#10;Artifact QA checks native XML, IDs, connectors, page/text bounds and local previews; it is not a deployed service test.&#10;No services were installed, no model inference was benchmarked, and no GitHub changes were published by this delivery." style="text=1;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;spacing=0;fontFamily=DejaVu Sans;fontSize=19;fontStyle=0;fontColor=#20364A;lineHeight=1.25;connectable=0;">
+          <mxGeometry x="18" y="60" width="1664" height="184" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
