@@ -1,4 +1,8 @@
-# JFXAI4ARCH — On-Premise AI and Technical Knowledge Platform
+<p align="center">
+<img src="open-source-ai-architecture_gdext.jpg" alt="Arquitectura con gdext para Godot y Rust" width="100%" />
+</p>
+
+# On-Premise AI and Technical Knowledge Platform
 
 **Local RAG · GLiNER2 document intelligence · Technical bibliography · Private inference · MCP · Evidence and provenance**
 
