@@ -14,6 +14,30 @@ The resulting platform can ingest technical documents, recover their structure, 
 
 **Delivery status:** this Markdown and its companion `jfxai4arch_gliner2_onpremise_rag.drawio` define the proposed integration. They do not install services, publish repository changes, or establish measured extraction/RAG quality. The local Python example is an integration recipe, not a completed application.
 
+## Table of Contents
+
+- [1. Source baseline and merge policy](#1-source-baseline-and-merge-policy)
+- [2. Objectives and representative use cases](#2-objectives-and-representative-use-cases)
+- [3. Architectural principles](#3-architectural-principles)
+- [4. Integrated platform architecture](#4-integrated-platform-architecture)
+- [5. GLiNER2 subsystem: capabilities and limits](#5-gliner2-subsystem-capabilities-and-limits)
+- [6. Document and bibliography ingestion](#6-document-and-bibliography-ingestion)
+- [7. Technical extraction schemas and normalization](#7-technical-extraction-schemas-and-normalization)
+- [8. Technical bibliography and citation integrity](#8-technical-bibliography-and-citation-integrity)
+- [9. Local RAG query and retrieval architecture](#9-local-rag-query-and-retrieval-architecture)
+- [10. Local generation and retained model routing](#10-local-generation-and-retained-model-routing)
+- [11. Strict on-premise and local development profiles](#11-strict-on-premise-and-local-development-profiles)
+- [12. Local development recipe](#12-local-development-recipe)
+- [13. Proposed application contracts](#13-proposed-application-contracts)
+- [14. MCP and agent integration](#14-mcp-and-agent-integration)
+- [15. Software and model dependency compendium](#15-software-and-model-dependency-compendium)
+- [16. Evaluation, fine-tuning and release gates](#16-evaluation-fine-tuning-and-release-gates)
+- [17. Security, privacy and operations](#17-security-privacy-and-operations)
+- [18. Implementation roadmap and repository organization](#18-implementation-roadmap-and-repository-organization)
+- [19. Draw.io views and artifact validation](#19-drawio-views-and-artifact-validation)
+- [20. Licensing, contribution and project status](#20-licensing-contribution-and-project-status)
+- [21. Multi-repository subsystem and Bonsai middleware integration](#21-multi-repository-subsystem-and-bonsai-middleware-integration)
+
 ## 1. Source baseline and merge policy
 
 | Source | Reviewed revision | Verified scope | Use in this consolidation |
@@ -545,3 +569,301 @@ Contributions should specify the problem, affected document/model profiles, sour
 For research attribution, use the original authors' publication: Urchade Zaratiana, Gil Pasternak, Oliver Boyd, George Hurn-Maloney and Ash Lewis, **“GLiNER2: Schema-Driven Multi-Task Learning for Structured Information Extraction,”** EMNLP 2025 System Demonstrations, pp. 130–140. The paper provides background for GLiNER2; it does not validate every later fork extension. [ACL Anthology publication](https://aclanthology.org/2025.emnlp-demos.10/).
 
 **Project direction:** retain JFXAI4ARCH's modular AI platform, add local document intelligence with GLiNER2, and make technical knowledge retrieval reproducible, access-controlled and traceable to the documents actually consulted.
+
+---
+
+## 21. Multi-repository subsystem and Bonsai middleware integration
+
+This extension fuses the JFXAI4ARCH on-premise AI and technical-knowledge architecture with three Robotics Intelligent Systems subsystems and a Bonsai-oriented simulation middleware. It adds an explicit modeling/development entry point, a subsystem router, reactive connector graphs, a physics-engine adapter and traceable evidence.
+
+The integration is intentionally modular. A repository or connector listed here is a candidate boundary until its implementation, source revision, license obligations and acceptance tests are verified in JFXAI4ARCH.
+
+### 21.1 Source ledger and merge policy
+
+| Source | Reviewed README revision | Verified scope | Integration status |
+|---|---|---|---|
+| [JFXAI4ARCH](https://github.com/robotics-intelligent-systems/jfxai4arch/blob/ca1179888908a6a5ca4c0371782a5e74924ab576/README.md) | ca1179888908a6a5ca4c0371782a5e74924ab576 | On-premise RAG, local/private inference, GLiNER2 extraction, MCP, evidence and deployment layers | **System architecture baseline** |
+| [JFXLCDP](https://github.com/robotics-intelligent-systems/jfxlcdp/blob/234b694d43661a0b847776c929b4e02e99bc8f82/README.md) | 234b694d43661a0b847776c929b4e02e99bc8f82 | Specification-driven low-code, MBSE, Modelica, AI engineering and Bonsai edge/reactive proposal | **Modeling and generation subsystem** |
+| [JFXLEGACY2MODERN](https://github.com/robotics-intelligent-systems/jfxlegacy2modern/blob/efbea8dc157c0572c0d4d2648e14d032c7e43dd6/README.md) | efbea8dc157c0572c0d4d2648e14d032c7e43dd6 | Legacy discovery, architecture recovery, AI-assisted refactoring and framework migration | **Modernization subsystem** |
+| [JFXICP](https://github.com/robotics-intelligent-systems/jfxicp/blob/afc655af50a57c7b1ddf60cb52d708a3dbbe4980/README.md) | afc655af50a57c7b1ddf60cb52d708a3dbbe4980 | Cloud/polyglot interoperability, engineering computing, co-simulation and distributed runtimes | **Interoperability subsystem** |
+| [sdk2035/bonsai](https://github.com/sdk2035/bonsai/blob/5c1cd1fe5d6e41f2bb0ac3e45cc15a12ff751f86/README.md) | 5c1cd1fe5d6e41f2bb0ac3e45cc15a12ff751f86 | Fork of Bonsai-Rx visual reactive language with compiler, IDE, standard library and Rx.NET observables | **Reactive middleware candidate; MIT fork** |
+| [sdk2035/physics](https://github.com/sdk2035/physics/blob/4f709b85f5cde251f15d852edb449f694cb64161/README.md) | 4f709b85f5cde251f15d852edb449f694cb64161 | Fork of Bonsai-Rx physics library for reactive 3D physics simulations | **Physics adapter candidate; MIT fork** |
+
+The revision values above identify the reviewed README blobs, not a claim that all dependent source files share the same revision. Pin repository commits, package locks, model checkpoints and simulator versions separately.
+
+### 21.2 Modeling and development entry block
+
+The entry block is the single intake boundary for a new engineering work package. It prevents a user, agent or connector from bypassing requirements and directly executing a simulator or migration.
+
+~~~mermaid
+flowchart TD
+  U["Engineer, scientist or developer"] --> E["Modeling and development entry"]
+  E --> R["Requirements, constraints and hazards"]
+  E --> L["Legacy repository and runtime context"]
+  E --> I["Interoperability and deployment intent"]
+  E --> S["Simulation, physics and telemetry assets"]
+  R --> W["Canonical project work package"]
+  L --> W
+  I --> W
+  S --> W
+  W --> G["JFXAI4ARCH policy, RAG and subsystem router"]
+~~~
+
+| Entry port | Accepted inputs | Validation at intake | Produced artifact |
+|---|---|---|---|
+| Requirements | Natural language, SRS, SysML/Modelica identifiers, units, limits and hazards | Required identifiers, units, ownership and acceptance criteria | Versioned requirement set |
+| Software context | Legacy source tree, build metadata, APIs, schemas and runtime constraints | Hash, provenance, secret scan and license inventory | Modernization work package |
+| Interoperability | Language/runtime targets, API contracts, message schemas and deployment profile | Protocol/version compatibility and data-classification policy | Integration profile |
+| Simulation/twin | Modelica/FMI/ROS assets, ROS topics, physics parameters and recorded episodes | Unit/coordinate-frame checks, scenario manifest and rights review | Reproducible scenario bundle |
+| Knowledge | Approved documents, code fragments and engineering references | ACL, source revision, parser and citation metadata | Authorized evidence set |
+
+The entry block emits a canonical work package with project ID, source revisions, requirement IDs, subsystem route, middleware profile, data-classification level, acceptance gates and reviewer ownership. No downstream component should infer these fields from an untrusted prompt.
+
+### 21.3 Subsystem decomposition
+
+| Subsystem | Responsibility in the fused architecture | Primary inputs | Primary outputs | Boundary |
+|---|---|---|---|---|
+| **JFXAI4ARCH** | Governance, local/private AI, RAG, document intelligence, MCP policy, evidence and deployment profiles | Work package, approved corpus, model/tool policies | Evidence context, agent decisions, audit events and deployment instructions | Orchestrates; does not replace domain simulators or migration engines |
+| **JFXLCDP** | Specification-driven low-code, MBSE/Modelica modeling, transformations, simulation configuration and code generation | Requirements, system models and reviewed feature contracts | Model revisions, generated application artifacts, simulation jobs and traceability links | Produces reviewable artifacts; no automatic safety-critical deployment |
+| **JFXLEGACY2MODERN** | Repository discovery, architecture recovery, business-rule extraction, refactoring, API/microservice migration and regression tests | Legacy repository, build/runtime evidence and target architecture | Modernization plan, candidate patches, adapters, tests and migration evidence | Changes are proposed and validated; source remains immutable until approval |
+| **JFXICP** | Polyglot/cloud interoperability, message contracts, co-simulation, distributed execution and engineering computing | Work package, subsystem contracts and runtime targets | Protocol adapters, orchestration plans, co-simulation sessions and normalized events | Owns interoperability; does not own requirement truth |
+| **Shared contract layer** | Project manifest, event envelope, model/physics contracts and evidence IDs | Outputs of all subsystems | Versioned messages and traceability edges | Backward compatibility and schema validation are mandatory |
+
+### 21.4 Bonsai middleware layer
+
+The middleware is a replaceable integration tier between JFX subsystems and simulators. Bonsai-Rx is used for visual reactive composition; Microsoft Project Bonsai connectors are isolated as optional provider adapters. The same contract must work in a strict local profile without a hosted service.
+
+~~~mermaid
+flowchart TD
+  X["JFX subsystem outputs"] --> C["Canonical integration contracts"]
+  C --> B["Bonsai-Rx graph<br/>sdk2035/bonsai"]
+  B --> Q["Simulator and ROS adapters"]
+  B --> P["Physics/twin adapter<br/>sdk2035/physics"]
+  B --> V["Visualization and episode review"]
+  B --> A["Project Bonsai API adapter<br/>optional external profile"]
+  Q --> T["Telemetry and replay store"]
+  P --> T
+  V --> T
+  T --> C
+~~~
+
+| Middleware component | Verified scope from repository | Proposed JFXAI4ARCH use | Status and boundary |
+|---|---|---|---|
+| [sdk2035/bonsai](https://github.com/sdk2035/bonsai) | Bonsai-Rx compiler, IDE and standard library; workflows expose asynchronous Rx.NET observables | Graphical composition of event streams, feature windows, simulator calls, policy checks and dashboards | MIT fork of bonsai-rx/bonsai; pin fork and dependency revisions |
+| [sdk2035/bonsai-sim-connector-template](https://github.com/sdk2035/bonsai-sim-connector-template) | Python template for creating a simulation connector; the template asks developers to replace SIM_PLATFORM/SAMPLE_NAME and implement TODO sections; Java/TypeScript equivalents are possible | Scaffold for a local simulator adapter implementing reset, step, state/action exchange and episode lifecycle | MIT fork; source template is archived; a template is not a working connector |
+| [sdk2035/ROS-bonsai-connector](https://github.com/sdk2035/ROS-bonsai-connector) | Python connector for ROS-enabled simulators, with TurtleBot3 examples and ROS 2 Foxy assumptions; examples mention Gazebo, Webots, CoppeliaSim and Unity | Adapter from ROS topics/services to the canonical event envelope and episode interface | MIT fork; source is archived and the README assumes a Project Bonsai/Azure workflow; validate ROS distribution and local mode before use |
+| [sdk2035/bonsai-viz-example](https://github.com/sdk2035/bonsai-viz-example) | JavaScript visualizer examples loaded as browser IFrame applications and updated with window.postMessage | Episode/state/action visualization, cursor-linked inspection and human review dashboard | MIT fork; source is archived; hosting and browser security are separate deployment concerns |
+| [sdk2035/bonsai-twin-builder](https://github.com/sdk2035/bonsai-twin-builder) | Python 3.7 connector for an Ansys Twin Builder cabin-pressure sample | Optional reference adapter for co-simulation and digital-twin episodes | License metadata is NOASSERTION; the sample contains ANSYS-copyrighted files; do not make it part of the open core or redistribute without review |
+| [sdk2035/microsoft-bonsai-api](https://github.com/sdk2035/microsoft-bonsai-api) | Python, C#, Java and TypeScript support libraries for interfacing simulators with the Bonsai Azure service | Provider adapter for an optional managed training/deployment profile | MIT fork; source is archived; requires a separate cloud/service boundary and is disabled in strict on-premise mode |
+| [sdk2035/physics](https://github.com/sdk2035/physics) | Bonsai-Rx library for reactive 3D physics simulations | Physics source for deterministic episodes, contact events and state/action streams | MIT fork of bonsai-rx/physics; validate engine dependencies, numerical determinism and target platform |
+
+The SDK2035 repositories above are not interchangeable. sdk2035/bonsai and sdk2035/physics belong to the Bonsai-Rx visual/reactive ecosystem, while the simulator, ROS, Twin Builder and API repositories target Microsoft Project Bonsai connector patterns. The architecture keeps these namespaces and trust boundaries separate.
+
+### 21.5 Physics-engine adapter contract
+
+The physics adapter makes sdk2035/physics consumable by JFXLCDP and JFXICP without leaking engine-specific objects into requirements, RAG or agent prompts.
+
+| Contract object | Required fields | Semantics |
+|---|---|---|
+| PhysicsWorldConfig | world_id, timestep, gravity, units, coordinate_frame, integrator, seed | Immutable world and numerical configuration for a run |
+| BodyState | body_id, pose, linear/angular velocity, acceleration, mass, contacts | Normalized state at a simulation tick |
+| ActionCommand | episode_id, tick, actuator values, limits, source | Command applied after policy and unit validation |
+| ObservationFrame | episode_id, tick, time, body states, sensors, rewards/metrics | Canonical observation sent to reactive graphs and agents |
+| PhysicsEvent | collision/contact, reset, timeout, numerical warning or error | Lifecycle and safety event with provenance |
+| Snapshot | world_id, tick, state hash, serialized state | Deterministic replay and rollback boundary |
+
+Adapter requirements:
+
+1. Use fixed-step execution with an explicit timestep and coordinate frame.
+2. Convert engine units to the project unit system before a message leaves the adapter.
+3. Expose reset, step, snapshot, restore and close as idempotent operations.
+4. Preserve seed, solver/integrator, engine revision and parameter hash in every episode manifest.
+5. Apply back-pressure and bounded queues so an agent cannot overrun the physics worker.
+6. Emit numerical warnings as evidence events; never silently coerce NaN, infinity or invalid contact states.
+7. Keep physics outputs read-only for RAG and generation; actuator commands pass through an independent policy/shield layer.
+
+Example adapter profile:
+
+~~~yaml
+physics_profile:
+  engine: sdk2035/physics
+  mode: local-reactive
+  timestep_s: requirement-defined
+  units: SI
+  coordinate_frame: project-defined
+  deterministic_seed: required
+  interfaces:
+    reset: canonical.reset.v1
+    step: canonical.action-observation.v1
+    snapshot: canonical.snapshot.v1
+  safety:
+    reject_nan: true
+    max_queue_depth: requirement-defined
+    policy_shield: required
+~~~
+
+### 21.6 Canonical integration contracts
+
+All subsystem and middleware traffic uses versioned envelopes. Transports can be in-process Rx.NET observables, ROS 2, MQTT, REST/gRPC or a JFXICP message bus.
+
+~~~json
+{
+  "event_type": "simulation.observation",
+  "schema_version": "1.0.0",
+  "event_id": "uuid",
+  "project_id": "project-001",
+  "work_package_id": "wp-001",
+  "subsystem": "jfxlcdp",
+  "asset_id": "asset-001",
+  "episode_id": "episode-001",
+  "tick": 42,
+  "timestamp": "2026-09-14T00:00:00Z",
+  "source": {
+    "kind": "sdk2035/physics",
+    "revision": "pinned-commit",
+    "scenario_id": "scenario-001"
+  },
+  "payload": {
+    "state": {},
+    "features": {},
+    "quality": {"valid": true}
+  },
+  "trace": {
+    "requirement_ids": ["REQ-001"],
+    "model_revision": "model-commit",
+    "evidence_ids": []
+  }
+}
+~~~
+
+Example project manifest:
+
+~~~yaml
+project_id: open-twin-project-001
+entry_profile: local-first-private
+subsystems:
+  - id: jfxai4arch
+    role: governance-rag-evidence
+  - id: jfxlcdp
+    role: specification-mbse-low-code
+  - id: jfxlegacy2modern
+    role: legacy-modernization
+  - id: jfxicp
+    role: interoperability-cosimulation
+middleware:
+  reactive_runtime: sdk2035/bonsai
+  simulator_scaffold: sdk2035/bonsai-sim-connector-template
+  ros_adapter: sdk2035/ROS-bonsai-connector
+  visualizer: sdk2035/bonsai-viz-example
+  twin_builder_adapter: sdk2035/bonsai-twin-builder
+  physics_adapter: sdk2035/physics
+  project_bonsai_api: disabled
+governance:
+  human_approval_required: true
+  source_pinning_required: true
+  sbom_required: true
+~~~
+
+These are JFXAI4ARCH contracts, not upstream API signatures. An implementation may map them to another transport or simulator while preserving field semantics.
+
+### 21.7 AI and agent integration
+
+The JFXAI4ARCH agent layer uses the work package and evidence service to coordinate the subsystems. Proposed tool operations are narrow, auditable and provider-neutral:
+
+| Operation | Input | Output | Control |
+|---|---|---|---|
+| create_modeling_work_package | Intake payload and source manifests | Canonical work package and validation report | Reject missing units, ownership or provenance |
+| route_subsystem_task | Work package and task type | JFXLCDP/JFXLEGACY2MODERN/JFXICP route | Policy allowlist and human review for destructive tasks |
+| compile_bonsai_graph | Graph revision and package lock | Compile diagnostics and graph manifest | Sandboxed process; deny undeclared I/O |
+| run_physics_episode | Physics profile and action policy | Observation/event stream and episode manifest | Resource limits, watchdog and deterministic seed |
+| replay_integration_episode | Dataset, graph and model revisions | Replayed events and divergence report | Require schema/unit compatibility |
+| publish_evidence_bundle | Results, metrics and reviewer decision | Immutable evidence record and deployment instruction | No publication without required gates |
+
+Bonsai graphs, prompts, simulator files and model artifacts are data, not instructions. The agent cannot grant itself network access, change a policy shield or promote a model by writing a field into an event.
+
+### 21.8 Categorized alternative compendium
+
+| Category | Primary component | Open alternative or fallback | Classification | Key decision |
+|---|---|---|---|---|
+| Architecture and governance | JFXAI4ARCH | Minimal FastAPI/MCP service with local policy | Core baseline | Keep evidence, authorization and deployment profiles centralized |
+| Requirements/modeling | JFXLCDP | Capella/OpenMBEE plus a typed generator | Core subsystem | Requirements and units remain authoritative |
+| Legacy modernization | JFXLEGACY2MODERN | Semgrep/tree-sitter/custom codemods | Core subsystem | Produce reviewable patches and regression evidence |
+| Interoperability | JFXICP | FMI/FMPy, Apache Camel or typed REST/gRPC | Core subsystem | Normalize protocols and preserve schema/version metadata |
+| Reactive runtime | sdk2035/bonsai | bonsai-rx/bonsai upstream, Node-RED or plain Rx.NET | Integration candidate | Use for dataflow; it is not a safety controller or ML trainer |
+| Simulator connector scaffold | sdk2035/bonsai-sim-connector-template | Project-owned Python/TypeScript connector template | Integration candidate | Implement the canonical reset/step/episode contract |
+| Robotics connector | sdk2035/ROS-bonsai-connector | Native ROS 2 bridge or rosbridge | Optional integration | Validate ROS distribution, QoS and local execution |
+| Twin Builder connector | sdk2035/bonsai-twin-builder | OpenModelica/FMI or another licensed twin adapter | Optional/reference | Keep ANSYS sample files and license obligations isolated |
+| Managed Bonsai API | sdk2035/microsoft-bonsai-api | Local simulator API with no hosted service | Optional external | Disable in strict on-premise mode |
+| Visualization | sdk2035/bonsai-viz-example | React/Three.js, Godot or O3DE dashboard | Optional | Visual state/action evidence, not a source of truth |
+| Physics | sdk2035/physics | OpenModelica, MuJoCo, Bullet or a domain engine | Integration candidate | Enforce units, deterministic stepping and policy shields |
+| Edge AI | Microsoft EdgeML Bonsai algorithm | Compact tree baseline, ONNX Runtime or TensorFlow Lite Micro | Research/optional | License and resource gates precede distribution |
+| Knowledge/RAG | GLiNER2 + Qdrant + PostgreSQL | Lexical-only search and local embeddings | Core baseline | Authorization precedes retrieval, reranking and generation |
+| Observability | OpenTelemetry + Prometheus/Grafana | Structured local logs and metrics | Optional/runtime | Monitor latency, dropped events, drift and resource use |
+| Artifact governance | SPDX/CycloneDX, signed manifests | Reviewed notices for prototypes | Governance/build | Missing license data blocks release |
+
+### 21.9 Deployment profiles
+
+| Profile | Included components | Network posture | Intended use |
+|---|---|---|---|
+| Strict local/private | JFXAI4ARCH, JFXLCDP, JFXLEGACY2MODERN, JFXICP, Bonsai-Rx, physics, local connectors and private storage | No mandatory egress; Project Bonsai API disabled | Sensitive engineering, offline labs and regulated work |
+| Connected workstation | Local stack plus selected package mirrors and optional visualizer hosting | Controlled egress for approved sources | Development and integration tests |
+| Private team cluster | Containerized services, Qdrant/PostgreSQL, workers, observability and internal identity | Private network; no public corpus exposure | Shared engineering operation |
+| Hybrid managed training | Local evidence and adapters plus microsoft-bonsai-api/Azure Project Bonsai | Explicit external boundary, consent and data-classification review | Optional experimentation where cloud use is approved |
+
+The cloud profile is an adapter, not the architecture default. A project must be able to compile, replay, evaluate and roll back in the strict local profile without importing cloud-only assumptions.
+
+### 21.10 Verification and acceptance gates
+
+| Gate | Required evidence | Release rule |
+|---|---|---|
+| Entry validation | Work package, source hashes, requirements, units, hazards, owners and ACLs | Block incomplete or unowned intake |
+| Subsystem routing | Deterministic route and contract compatibility report | Block undeclared or incompatible hand-offs |
+| Reactive middleware | Graph compilation, package lock, bounded queues and replay output | Block undeclared I/O or nondeterministic replay |
+| Physics | Fixed-step determinism, unit/coordinate checks, snapshot/restore and numerical diagnostics | Block NaN/infinity, divergence or missing provenance |
+| Connector interoperability | ROS/simulator/twin/API contract tests and QoS/timeout behavior | Block if reset/step/state/action semantics differ |
+| AI quality | Requirement-linked metrics, baseline comparison, calibration and OOD/fallback tests | Block below requirement-defined thresholds |
+| Security | Sandbox, authorization, secret scan, signed artifacts and rollback exercise | Human approval required for safety-critical profiles |
+| Legal/provenance | SPDX mapping, dependency notices, ANSYS sample review, Project Bonsai terms and FTO review | Do not distribute unresolved obligations |
+| Evidence | Requirement → model → episode → metric → reviewer decision chain | No deployment without an immutable evidence bundle |
+
+### 21.11 Implementation roadmap
+
+| Stage | Deliverables | Exit criterion |
+|---|---|---|
+| M0 — Inventory | Source ledger, fork/parent map, license review, target simulator and hardware profile | Owners and pinned revisions recorded |
+| M1 — Modeling entry | Work-package schema, intake validators, subsystem router and audit events | A synthetic project reaches the correct subsystem route |
+| M2 — Reactive middleware | Bonsai-Rx graph fixture, canonical event envelope and connector SDK | Local stream passes deterministic replay |
+| M3 — Physics adapter | sdk2035/physics wrapper, snapshot/restore, units and policy shield | Physics episode reproduces state hash and safety events |
+| M4 — Simulator and ROS | Template-based simulator adapter, ROS 2 fixture and timeout/QoS tests | Reset/step/action/observation contract passes |
+| M5 — Twin and visualization | Twin Builder reference boundary, visualizer plugin and evidence review UI | Episode can be inspected without changing source truth |
+| M6 — Subsystem end-to-end | JFXLCDP, JFXLEGACY2MODERN and JFXICP workflows connected through JFXAI4ARCH | Traceability and rollback tests pass |
+| M7 — Optional managed profile | microsoft-bonsai-api adapter and cloud consent controls | Cloud boundary is opt-in and local fallback remains green |
+
+### 21.12 Security, licensing and responsible AI
+
+- Treat all graph files, prompts, simulator packages, models and telemetry as untrusted input; sandbox compilation and cap CPU, memory, file and network access.
+- Keep JFXAI4ARCH's strict on-premise profile as the default for sensitive documents and engineering data. Disable Project Bonsai/Azure adapters unless the work package explicitly authorizes them.
+- Preserve MIT notices for the SDK2035 forks and verify transitive package licenses at every pinned revision.
+- The Twin Builder fork reports NOASSERTION and contains ANSYS-copyrighted sample material; keep it outside the open core until rights and redistribution terms are confirmed.
+- The Microsoft connector repositories are forks of projects whose source repositories are archived; pin the fork and validate maintenance, security fixes and compatibility before production use.
+- The project-level JFXAI4ARCH metadata does not declare a root license; do not infer a platform license from a dependency's license.
+- Require human approval for requirement changes, safety policies, learned-model promotion, destructive modernization patches and deployment.
+- Sign manifests, graph packages, datasets, model artifacts and evidence bundles; support rollback to the last approved revision.
+- No component or architecture statement grants patent freedom. Conduct jurisdiction-specific patent/FTO review before commercial or safety-critical release.
+
+### 21.13 References
+
+- [JFXAI4ARCH](https://github.com/robotics-intelligent-systems/jfxai4arch)
+- [JFXLCDP](https://github.com/robotics-intelligent-systems/jfxlcdp)
+- [JFXLEGACY2MODERN](https://github.com/robotics-intelligent-systems/jfxlegacy2modern)
+- [JFXICP](https://github.com/robotics-intelligent-systems/jfxicp)
+- [sdk2035/bonsai](https://github.com/sdk2035/bonsai)
+- [sdk2035/bonsai-sim-connector-template](https://github.com/sdk2035/bonsai-sim-connector-template)
+- [sdk2035/ROS-bonsai-connector](https://github.com/sdk2035/ROS-bonsai-connector)
+- [sdk2035/bonsai-viz-example](https://github.com/sdk2035/bonsai-viz-example)
+- [sdk2035/bonsai-twin-builder](https://github.com/sdk2035/bonsai-twin-builder)
+- [sdk2035/microsoft-bonsai-api](https://github.com/sdk2035/microsoft-bonsai-api)
+- [sdk2035/physics](https://github.com/sdk2035/physics)
+- [Microsoft EdgeML Bonsai algorithm](https://github.com/microsoft/EdgeML/wiki/Bonsai)
+- [Bonsai-Rx documentation](https://bonsai-rx.org/docs/)
+
