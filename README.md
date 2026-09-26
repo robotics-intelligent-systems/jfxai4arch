@@ -2,7 +2,7 @@
 <img src="open-source-ai-architecture_gdext.jpg" alt="Arquitectura con gdext para Godot y Rust" width="100%" />
 </p>
 
-# On-Premise AI and Technical Knowledge Platform
+# Agentic AI Technical Knowledge Platform
 
 **Local RAG · GLiNER2 document intelligence · Technical bibliography · Private inference · MCP · Evidence and provenance**
 
