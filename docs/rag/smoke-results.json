@@ -1,0 +1,109 @@
+{
+  "kind": "synthetic_smoke_not_domain_quality",
+  "generation": "8ab7a778ad3c5e9d1be3527141eff754528f7096a316bd53ede1ec0425982ba7",
+  "positive_questions": 12,
+  "negative_questions": 2,
+  "document_recall_at_3": 1.0,
+  "mrr_at_3": 1.0,
+  "no_match_abstention_rate": 1.0,
+  "results": [
+    {
+      "question": "gpt-oss-20b hardware",
+      "expected": "deployment.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.563
+    },
+    {
+      "question": "preparación conectada dependencias",
+      "expected": "deployment.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.366
+    },
+    {
+      "question": "private runtime embeddings",
+      "expected": "deployment.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.323
+    },
+    {
+      "question": "GLiNER2 extracción estructurada",
+      "expected": "extraction.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.307
+    },
+    {
+      "question": "ExtractionRun checkpoint hash",
+      "expected": "extraction.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.316
+    },
+    {
+      "question": "AutoExtractor completo",
+      "expected": "extraction.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.288
+    },
+    {
+      "question": "Qdrant PostgreSQL",
+      "expected": "retrieval.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.28
+    },
+    {
+      "question": "permisos documentales",
+      "expected": "retrieval.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.291
+    },
+    {
+      "question": "generation unavailable",
+      "expected": "retrieval.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.31
+    },
+    {
+      "question": "retirada documental",
+      "expected": "governance.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.279
+    },
+    {
+      "question": "bibliography resolution",
+      "expected": "governance.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.273
+    },
+    {
+      "question": "validez citas abstención",
+      "expected": "governance.md",
+      "rank": 1,
+      "abstained": false,
+      "latency_ms": 0.293
+    },
+    {
+      "question": "xylophone",
+      "expected": null,
+      "rank": null,
+      "abstained": true,
+      "latency_ms": 0.253
+    },
+    {
+      "question": "pterodáctilo",
+      "expected": null,
+      "rank": null,
+      "abstained": true,
+      "latency_ms": 0.258
+    }
+  ]
+}
