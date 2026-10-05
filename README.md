@@ -12,7 +12,7 @@ JFXAI4ARCH provides a modular reference architecture for enterprise AI agents, l
 
 The resulting platform can ingest technical documents, recover their structure, extract entities and reference metadata, build searchable evidence indexes, and answer questions with source passages and reproducible citations. GLiNER2 enriches the evidence; a separate embedding model supports semantic retrieval, and a separate local language model generates answers.
 
-**Delivery status:** this Markdown and its companion `jfxai4arch_gliner2_onpremise_rag.drawio` define the proposed integration. They do not install services, publish repository changes, or establish measured extraction/RAG quality. The local Python example is an integration recipe, not a completed application.
+**Delivery status:** the architecture below remains a target design. An initial [executable technical RAG pilot](docs/rag/PILOT.md) now provides local Markdown/TXT retrieval, evidence provenance, optional local generation and a starter evaluation under `services/rag-service/`. It does not implement the full GLiNER2/hybrid/enterprise platform or establish domain answer quality. The GLiNER2 Python example below remains an integration recipe.
 
 ## Table of Contents
 
@@ -544,7 +544,7 @@ The simplified evolution appears on the **second Draw.io tab**. No development d
 | `artifacts/manifests/` | Source/dependency/model/index manifests; no private corpus committed by default |
 | `tests/extraction/`, `tests/rag/`, `tests/offline/` | Corpus-specific quality, access and disconnected-operation tests |
 
-These paths are proposed; the package has not created them in GitHub. Preserve the original agent, local-model-gateway, MCP, model-routing, security and deployment documentation when performing a later repository merge.
+The technical RAG pilot now populates `docs/rag/`, `services/rag-service/`, `deploy/local/` and `tests/rag/`; the other service paths remain proposed. Preserve the original agent, local-model-gateway, MCP, model-routing, security and deployment documentation when performing a later repository merge.
 
 ## 19. Draw.io views and artifact validation
 
@@ -866,4 +866,5 @@ The cloud profile is an adapter, not the architecture default. A project must be
 - [sdk2035/physics](https://github.com/sdk2035/physics)
 - [Microsoft EdgeML Bonsai algorithm](https://github.com/microsoft/EdgeML/wiki/Bonsai)
 - [Bonsai-Rx documentation](https://bonsai-rx.org/docs/)
+
 

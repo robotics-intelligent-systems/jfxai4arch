@@ -1,0 +1,27 @@
+meta {
+  name: Answers
+  type: http
+  seq: 3
+}
+post {
+  url: {{baseUrl}}/v1/answers
+  body: json
+  auth: bearer
+}
+auth:bearer {
+  token: {{token}}
+}
+headers {
+  Content-Type: application/json
+}
+body:json {
+  {"question": "Qdrant PostgreSQL", "top_k": 3}
+}
+tests {
+  test("Evidence contract with sample corpus", function () {
+    expect(res.getStatus()).to.equal(200);
+    expect(res.getBody().evidence.length).to.be.greaterThan(0);
+    expect(res.getBody().evidence[0].sha256).to.have.lengthOf(64);
+    expect(["generated", "evidence_only", "abstained"]).to.include(res.getBody().status);
+  });
+}
